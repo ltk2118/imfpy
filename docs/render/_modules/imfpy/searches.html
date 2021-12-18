@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>imfpy.searches &mdash; imfpy  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> imfpy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../example.html"><code class="docutils literal notranslate"><span class="pre">imfpy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../example.html#user-guide">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">imfpy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>imfpy.searches</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for imfpy.searches</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="c1">#initialize a (very) simple caching mechanism for search results</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span><span class="o">,</span> <span class="nn">requests</span>
+<span class="n">country_cache</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">database_cache</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+<div class="viewcode-block" id="country_search"><a class="viewcode-back" href="../../autoapi/imfpy/searches/index.html#imfpy.searches.country_search">[docs]</a><span class="k">def</span> <span class="nf">country_search</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">regex</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Documentation</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">#Input data types and values- validation</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="nb">str</span><span class="p">),</span><span class="s2">&quot;Invalid inputs, please try again.&quot;</span>
+    
+    <span class="k">global</span> <span class="n">country_cache</span>
+    
+    <span class="k">if</span> <span class="n">country_cache</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+       <span class="c1">#get full list of countries if cache is empty</span>
+       <span class="n">codes</span> <span class="o">=</span> <span class="n">country_codes</span><span class="p">()</span>   
+    <span class="k">else</span><span class="p">:</span> 
+       <span class="c1">#otherwise just access the cached countries</span>
+        <span class="n">codes</span> <span class="o">=</span> <span class="n">country_cache</span>
+    
+    <span class="c1">#give the user the option to use regex to search if desired</span>
+    <span class="k">if</span> <span class="n">regex</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">keyword</span> <span class="o">=</span> <span class="n">keyword</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">match</span> <span class="o">=</span> <span class="n">codes</span><span class="p">[</span><span class="n">codes</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">regex</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)]</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">match</span> <span class="o">=</span> <span class="n">codes</span><span class="p">[</span><span class="n">codes</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">regex</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)]</span>
+
+    <span class="k">return</span> <span class="n">match</span></div>
+
+<div class="viewcode-block" id="country_codes"><a class="viewcode-back" href="../../autoapi/imfpy/searches/index.html#imfpy.searches.country_codes">[docs]</a><span class="k">def</span> <span class="nf">country_codes</span><span class="p">():</span>
+
+  <span class="c1">#only request data if it hasn&#39;t been cached</span>
+  <span class="k">global</span> <span class="n">country_cache</span>
+  
+  <span class="k">if</span> <span class="n">country_cache</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+      
+      <span class="c1">#import libraries and define base URL for API</span>
+      <span class="n">start_url</span> <span class="o">=</span> <span class="s2">&quot;http://dataservices.imf.org/REST/SDMX_JSON.svc/&quot;</span>
+      
+      <span class="c1"># send the get request, use the DOTS database as the database_id</span>
+      <span class="n">database_id</span> <span class="o">=</span> <span class="s1">&#39;DOT&#39;</span> 
+      <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">start_url</span><span class="si">}</span><span class="s1">DataStructure/</span><span class="si">{</span><span class="n">database_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+      
+      <span class="c1"># assert the response was 200 (OK)</span>
+      <span class="k">assert</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="o">==</span><span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;Error - HTTP request was unsuccessful.&quot;</span>
+    
+      <span class="c1">#convert the data to json </span>
+      <span class="kn">import</span> <span class="nn">json</span>
+      <span class="n">data_json</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+      
+    
+      <span class="c1">#get codelist (which contains countries)</span>
+      <span class="n">country_codelist</span> <span class="o">=</span> <span class="n">data_json</span><span class="p">[</span><span class="s1">&#39;Structure&#39;</span><span class="p">][</span><span class="s1">&#39;CodeLists&#39;</span><span class="p">][</span><span class="s1">&#39;CodeList&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;Code&#39;</span><span class="p">]</span>
+    
+      <span class="c1">#get list of countries and codes with a list comprehension</span>
+      <span class="n">codes</span> <span class="o">=</span> <span class="p">[</span><span class="n">country</span><span class="p">[</span><span class="s1">&#39;@value&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">country_codelist</span><span class="p">]</span>
+      <span class="n">countries</span> <span class="o">=</span> <span class="p">[</span><span class="n">country</span><span class="p">[</span><span class="s1">&#39;Description&#39;</span><span class="p">][</span><span class="s1">&#39;#text&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">country_codelist</span><span class="p">]</span>
+      
+      <span class="c1">#cache the result to avoid running it again</span>
+      <span class="n">country_cache</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Country Code&quot;</span><span class="p">:</span> <span class="n">codes</span><span class="p">,</span> <span class="s2">&quot;Country&quot;</span><span class="p">:</span> <span class="n">countries</span><span class="p">})</span>
+  
+  <span class="k">return</span> <span class="n">country_cache</span></div>
+
+<div class="viewcode-block" id="database_codes"><a class="viewcode-back" href="../../autoapi/imfpy/searches/index.html#imfpy.searches.database_codes">[docs]</a><span class="k">def</span> <span class="nf">database_codes</span><span class="p">():</span>
+    
+    <span class="c1">#only request data if it hasn&#39;t been cached</span>
+    <span class="k">global</span> <span class="n">database_cache</span>
+    
+    <span class="k">if</span> <span class="n">database_cache</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+    
+        <span class="c1">#define IMF data services API start point </span>
+        <span class="n">start_url</span> <span class="o">=</span> <span class="s2">&quot;http://dataservices.imf.org/REST/SDMX_JSON.svc&quot;</span>
+        
+        <span class="c1">#requests.get the full list of databases, convert to json</span>
+        <span class="kn">import</span> <span class="nn">requests</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">start_url</span><span class="si">}</span><span class="s1">/Dataflow&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+        
+        <span class="c1">#assert the response was 200 (OK)</span>
+        <span class="k">assert</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="o">==</span><span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;Error - HTTP request was unsuccessful.&quot;</span>
+        
+        <span class="c1">#convert the data to subscriptable json </span>
+        <span class="n">data_json</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        
+        <span class="c1">#convert results to dataframe</span>
+        <span class="n">df_temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_json</span><span class="p">[</span><span class="s1">&#39;Structure&#39;</span><span class="p">][</span><span class="s1">&#39;Dataflows&#39;</span><span class="p">][</span><span class="s1">&#39;Dataflow&#39;</span><span class="p">])</span> 
+        
+        <span class="c1">#parse out columns that themselves contain multiple cols of data</span>
+        <span class="n">parsed_Name</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">database</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">database</span> <span class="ow">in</span> <span class="n">data_json</span><span class="p">[</span><span class="s1">&#39;Structure&#39;</span><span class="p">][</span><span class="s1">&#39;Dataflows&#39;</span><span class="p">][</span><span class="s1">&#39;Dataflow&#39;</span><span class="p">]])</span>
+        <span class="n">parsed_KeyFamilyRef</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">database</span><span class="p">[</span><span class="s1">&#39;KeyFamilyRef&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">database</span> <span class="ow">in</span> <span class="n">data_json</span><span class="p">[</span><span class="s1">&#39;Structure&#39;</span><span class="p">][</span><span class="s1">&#39;Dataflows&#39;</span><span class="p">][</span><span class="s1">&#39;Dataflow&#39;</span><span class="p">]])</span>
+        
+        <span class="c1">#clean up dataframe columns</span>
+        <span class="n">df_temp</span> <span class="o">=</span> <span class="n">df_temp</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parsed_Name</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parsed_KeyFamilyRef</span><span class="p">)[[</span><span class="s1">&#39;@id&#39;</span><span class="p">,</span> <span class="s1">&#39;#text&#39;</span><span class="p">]]</span>
+        <span class="n">df_temp</span> <span class="o">=</span> <span class="n">df_temp</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;@id&#39;</span><span class="p">:</span> <span class="s1">&#39;Database ID&#39;</span><span class="p">,</span> <span class="s1">&#39;#text&#39;</span><span class="p">:</span> <span class="s1">&#39;Description&#39;</span><span class="p">})</span>
+        <span class="n">df_temp</span><span class="p">[</span><span class="s1">&#39;Database ID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_temp</span><span class="p">[</span><span class="s1">&#39;Database ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;DS-&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        
+        <span class="c1">#store clean dataframe to global cache</span>
+        <span class="n">database_cache</span> <span class="o">=</span> <span class="n">df_temp</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Database ID&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+    <span class="c1">#return cache</span>
+    <span class="k">return</span> <span class="n">database_cache</span> </div>
+
+<div class="viewcode-block" id="database_search"><a class="viewcode-back" href="../../autoapi/imfpy/searches/index.html#imfpy.searches.database_search">[docs]</a><span class="k">def</span> <span class="nf">database_search</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">regex</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    
+    <span class="c1">#Input data types and values- validation</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="nb">str</span><span class="p">),</span><span class="s2">&quot;Invalid inputs, please try again.&quot;</span>
+    
+    <span class="k">global</span> <span class="n">database_cache</span>
+    
+    <span class="k">if</span> <span class="n">database_cache</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+       <span class="c1">#get full list of countries if cache is empty</span>
+       <span class="n">codes</span> <span class="o">=</span> <span class="n">database_codes</span><span class="p">()</span>  
+    <span class="k">else</span><span class="p">:</span> 
+       <span class="c1">#otherwise just access the cached countries</span>
+        <span class="n">codes</span> <span class="o">=</span> <span class="n">database_cache</span>
+    
+    <span class="c1">#give the user the option to use regex to search if desired</span>
+    <span class="k">if</span> <span class="n">regex</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">keyword</span> <span class="o">=</span> <span class="n">keyword</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">match</span> <span class="o">=</span> <span class="n">codes</span><span class="p">[</span><span class="n">codes</span><span class="p">[</span><span class="s1">&#39;Description&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">regex</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)]</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">match</span> <span class="o">=</span> <span class="n">codes</span><span class="p">[</span><span class="n">codes</span><span class="p">[</span><span class="s1">&#39;Description&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">keyword</span><span class="p">,</span> <span class="n">regex</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)]</span>
+
+    <span class="k">return</span> <span class="n">match</span></div>
+
+<div class="viewcode-block" id="database_info"><a class="viewcode-back" href="../../autoapi/imfpy/searches/index.html#imfpy.searches.database_info">[docs]</a><span class="k">def</span> <span class="nf">database_info</span><span class="p">(</span><span class="n">database_id</span><span class="p">):</span>
+    
+    <span class="k">global</span> <span class="n">database_cache</span>
+    
+    <span class="k">if</span> <span class="n">database_cache</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+       <span class="c1">#get full list of countries if cache is empty</span>
+       <span class="n">codes</span> <span class="o">=</span> <span class="n">database_codes</span><span class="p">()</span>  
+    <span class="k">else</span><span class="p">:</span> 
+       <span class="c1">#otherwise just access the cached countries</span>
+        <span class="n">codes</span> <span class="o">=</span> <span class="n">database_cache</span>
+        
+    <span class="c1">#check the database ID is valid before sending a request</span>
+    <span class="k">assert</span> <span class="n">codes</span><span class="p">[</span><span class="s1">&#39;Database ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="n">database_id</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(),</span> <span class="s2">&quot;Invalid database. Please try again.&quot;</span>
+    
+    <span class="c1">#define IMF data services API start point </span>
+    <span class="n">start_url</span> <span class="o">=</span> <span class="s2">&quot;http://dataservices.imf.org/REST/SDMX_JSON.svc&quot;</span>
+        
+    <span class="c1">#send the get request</span>
+    <span class="kn">import</span> <span class="nn">requests</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">start_url</span><span class="si">}</span><span class="s1">/DataStructure/</span><span class="si">{</span><span class="n">database_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    
+    <span class="c1">#assert the response was 200 (OK)</span>
+    <span class="k">assert</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="o">==</span><span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;Error - HTTP request was unsuccessful.&quot;</span>
+    
+    <span class="c1">#convert the data to subscriptable json </span>
+    <span class="n">data_json</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    
+    <span class="c1">#get info from annotations</span>
+    <span class="n">annotations_json</span> <span class="o">=</span> <span class="n">data_json</span><span class="p">[</span><span class="s1">&#39;Structure&#39;</span><span class="p">][</span><span class="s1">&#39;KeyFamilies&#39;</span><span class="p">][</span><span class="s1">&#39;KeyFamily&#39;</span><span class="p">][</span><span class="s1">&#39;Annotations&#39;</span><span class="p">][</span><span class="s1">&#39;Annotation&#39;</span><span class="p">]</span>
+    
+    <span class="c1">#parse two columns: title and text</span>
+    <span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="n">annotation</span><span class="p">[</span><span class="s1">&#39;AnnotationTitle&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">annotation</span> <span class="ow">in</span> <span class="n">annotations_json</span><span class="p">]</span>
+    <span class="n">text_raw</span> <span class="o">=</span> <span class="p">[</span><span class="n">annotation</span><span class="p">[</span><span class="s1">&#39;AnnotationText&#39;</span><span class="p">][</span><span class="s1">&#39;#text&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">annotation</span> <span class="ow">in</span> <span class="n">annotations_json</span><span class="p">]</span>
+    
+    <span class="c1">#clean html tags out of the text if they exist</span>
+    <span class="kn">import</span> <span class="nn">re</span>
+    <span class="n">text_clean</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;.*?&gt;|&amp;([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">text</span><span class="p">)</span> <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">text_raw</span><span class="p">]</span>
+    <span class="c1">#return neat dataframe of database info</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Variable&#39;</span><span class="p">:</span><span class="n">titles</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span><span class="n">text_clean</span><span class="p">})</span>
+    
+    <span class="k">return</span> <span class="n">info</span></div>
+
+<div class="viewcode-block" id="database_dimensions"><a class="viewcode-back" href="../../autoapi/imfpy/searches/index.html#imfpy.searches.database_dimensions">[docs]</a><span class="k">def</span> <span class="nf">database_dimensions</span><span class="p">(</span><span class="n">database_id</span><span class="p">):</span>
+    
+    <span class="k">global</span> <span class="n">database_cache</span>
+    
+    <span class="k">if</span> <span class="n">database_cache</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+       <span class="c1">#get full list of countries if cache is empty</span>
+       <span class="n">codes</span> <span class="o">=</span> <span class="n">database_codes</span><span class="p">()</span>  
+    <span class="k">else</span><span class="p">:</span> 
+       <span class="c1">#otherwise just access the cached countries</span>
+        <span class="n">codes</span> <span class="o">=</span> <span class="n">database_cache</span>
+        
+    <span class="c1">#check the database ID is valid before sending a request</span>
+    <span class="k">assert</span> <span class="n">codes</span><span class="p">[</span><span class="s1">&#39;Database ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="n">database_id</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(),</span> <span class="s2">&quot;Invalid database. Please try again.&quot;</span>
+    
+    <span class="c1">#define IMF data services API start point </span>
+    <span class="n">start_url</span> <span class="o">=</span> <span class="s2">&quot;http://dataservices.imf.org/REST/SDMX_JSON.svc&quot;</span>
+        
+    <span class="c1">#send the get request</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">start_url</span><span class="si">}</span><span class="s1">/DataStructure/</span><span class="si">{</span><span class="n">database_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    
+    <span class="c1">#assert the response was 200 (OK)</span>
+    <span class="k">assert</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="o">==</span><span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;Error - HTTP request was unsuccessful.&quot;</span>
+    
+    <span class="c1">#convert the data to subscriptable json </span>
+    <span class="n">data_json</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    
+    <span class="c1">#get info from KeyFamilies --&gt; Components</span>
+    <span class="n">dimensions_temp</span> <span class="o">=</span> <span class="n">data_json</span><span class="p">[</span><span class="s1">&#39;Structure&#39;</span><span class="p">][</span><span class="s1">&#39;KeyFamilies&#39;</span><span class="p">][</span><span class="s1">&#39;KeyFamily&#39;</span><span class="p">][</span><span class="s1">&#39;Components&#39;</span><span class="p">][</span><span class="s1">&#39;Dimension&#39;</span><span class="p">]</span>
+    
+    <span class="c1">#return neat dataframe of database dimensions, dropping redundant columns</span>
+    <span class="n">dimensions_temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dimensions_temp</span><span class="p">)[[</span><span class="s1">&#39;@conceptRef&#39;</span><span class="p">,</span> <span class="s1">&#39;@conceptSchemeRef&#39;</span><span class="p">,</span><span class="s1">&#39;@codelist&#39;</span><span class="p">]]</span>
+    <span class="n">dimensions_clean</span> <span class="o">=</span> <span class="n">dimensions_temp</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;@conceptRef&#39;</span><span class="p">:</span> <span class="s1">&#39;Concept&#39;</span><span class="p">,</span> 
+                                                       <span class="s1">&#39;@conceptSchemeRef&#39;</span><span class="p">:</span> <span class="s1">&#39;Scheme&#39;</span><span class="p">,</span>
+                                                       <span class="s1">&#39;@codelist&#39;</span><span class="p">:</span> <span class="s1">&#39;Indicator ID&#39;</span><span class="p">})</span>
+    
+    <span class="c1">#have a column for Database ID so user can keep track of search</span>
+    <span class="n">dimensions_clean</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Database ID&quot;</span><span class="p">,</span> <span class="n">database_id</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">dimensions_clean</span></div>
+
+<div class="viewcode-block" id="indicator_dimensions"><a class="viewcode-back" href="../../autoapi/imfpy/searches/index.html#imfpy.searches.indicator_dimensions">[docs]</a><span class="k">def</span> <span class="nf">indicator_dimensions</span><span class="p">(</span><span class="n">indicator_id</span><span class="p">):</span>
+    
+    <span class="c1">#define IMF data services API start point </span>
+    <span class="n">start_url</span> <span class="o">=</span> <span class="s2">&quot;http://dataservices.imf.org/REST/SDMX_JSON.svc&quot;</span>
+    
+    <span class="c1"># pull the data </span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">start_url</span><span class="si">}</span><span class="s1">/CodeList/</span><span class="si">{</span><span class="n">indicator_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    
+    <span class="c1">#assert the response was 200 (OK)</span>
+    <span class="k">assert</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="o">==</span><span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;Error - HTTP request was unsuccessful.&quot;</span>
+    
+    <span class="c1">#convert the data to subscriptable json </span>
+    <span class="n">data_json</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="c1">#get codelist for that indicator</span>
+    <span class="n">codelist</span> <span class="o">=</span> <span class="n">data_json</span><span class="p">[</span><span class="s1">&#39;Structure&#39;</span><span class="p">][</span><span class="s1">&#39;CodeLists&#39;</span><span class="p">][</span><span class="s1">&#39;CodeList&#39;</span><span class="p">][</span><span class="s1">&#39;Code&#39;</span><span class="p">]</span>
+    
+    <span class="c1">#get list of codes and descriptions with a list comprehension</span>
+    <span class="n">codes</span> <span class="o">=</span> <span class="p">[</span><span class="n">code</span><span class="p">[</span><span class="s1">&#39;@value&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">codelist</span><span class="p">]</span>
+    <span class="n">descriptions</span> <span class="o">=</span> <span class="p">[</span><span class="n">code</span><span class="p">[</span><span class="s1">&#39;Description&#39;</span><span class="p">][</span><span class="s1">&#39;#text&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">codelist</span><span class="p">]</span>
+    
+    <span class="c1">#return neat dataframe of codes and descriptions</span>
+    <span class="c1">#have a column for Indicator ID so user can keep track of search</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Indicator ID&#39;</span><span class="p">:</span><span class="n">indicator_id</span><span class="p">,</span> 
+                         <span class="s1">&#39;Series ID&#39;</span><span class="p">:</span><span class="n">codes</span><span class="p">,</span> 
+                         <span class="s1">&#39;Description&#39;</span><span class="p">:</span><span class="n">descriptions</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">info</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Liam Tay Kearney.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>imfpy.searches &mdash; imfpy  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="imfpy.tools" href="../tools/index.html" />
+    <link rel="prev" title="imfpy.retrievals" href="../retrievals/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> imfpy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../example.html"><code class="docutils literal notranslate"><span class="pre">imfpy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../example.html#user-guide">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imfpy</span></code></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../retrievals/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imfpy.retrievals</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imfpy.searches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imfpy.tools</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#package-contents">Package Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">imfpy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">API Reference</a> &raquo;</li>
+          <li><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imfpy</span></code></a> &raquo;</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">imfpy.searches</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/autoapi/imfpy/searches/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-imfpy.searches">
+<span id="imfpy-searches"></span><h1><a class="reference internal" href="#module-imfpy.searches" title="imfpy.searches"><code class="xref py py-mod docutils literal notranslate"><span class="pre">imfpy.searches</span></code></a><a class="headerlink" href="#module-imfpy.searches" title="Permalink to this headline"></a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#imfpy.searches.country_search" title="imfpy.searches.country_search"><code class="xref py py-obj docutils literal notranslate"><span class="pre">country_search</span></code></a>(keyword, regex=False)</p></td>
+<td><p>Function to identify country codes and names from a keyword seach.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#imfpy.searches.country_codes" title="imfpy.searches.country_codes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">country_codes</span></code></a>()</p></td>
+<td><p>Function returns a dataframe of all IMF countries and codes for which data can be accessed through the JSON API.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#imfpy.searches.database_codes" title="imfpy.searches.database_codes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">database_codes</span></code></a>()</p></td>
+<td><p>Function returns a dataframe of all IMF databases from which data can be accessed through the JSON API.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#imfpy.searches.database_search" title="imfpy.searches.database_search"><code class="xref py py-obj docutils literal notranslate"><span class="pre">database_search</span></code></a>(keyword, regex=False)</p></td>
+<td><p>Function to identify database codes and names from a keyword seach.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#imfpy.searches.database_info" title="imfpy.searches.database_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">database_info</span></code></a>(database_id)</p></td>
+<td><p>Returns the high-level information on a particular user-specified database.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#imfpy.searches.database_dimensions" title="imfpy.searches.database_dimensions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">database_dimensions</span></code></a>(database_id)</p></td>
+<td><p>This function returns the dimensions of a particular user-specified database.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#imfpy.searches.indicator_dimensions" title="imfpy.searches.indicator_dimensions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indicator_dimensions</span></code></a>(indicator_id)</p></td>
+<td><p>Function returns a dataframe of indicator dimensions and series IDs</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline"></a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#imfpy.searches.country_cache" title="imfpy.searches.country_cache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">country_cache</span></code></a></p></td>
+<td><p>Cache for countries data</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#imfpy.searches.database_cache" title="imfpy.searches.database_cache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">database_cache</span></code></a></p></td>
+<td><p>Cache for databases data</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py data">
+<dt class="sig sig-object py" id="imfpy.searches.country_cache">
+<span class="sig-prename descclassname"><span class="pre">imfpy.searches.</span></span><span class="sig-name descname"><span class="pre">country_cache</span></span><a class="headerlink" href="#imfpy.searches.country_cache" title="Permalink to this definition"></a></dt>
+<dd><p>Cache for countries data</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="imfpy.searches.database_cache">
+<span class="sig-prename descclassname"><span class="pre">imfpy.searches.</span></span><span class="sig-name descname"><span class="pre">database_cache</span></span><a class="headerlink" href="#imfpy.searches.database_cache" title="Permalink to this definition"></a></dt>
+<dd><p>Cache for databases data</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="imfpy.searches.country_search">
+<span class="sig-prename descclassname"><span class="pre">imfpy.searches.</span></span><span class="sig-name descname"><span class="pre">country_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keyword</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/imfpy/searches.html#country_search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#imfpy.searches.country_search" title="Permalink to this definition"></a></dt>
+<dd><p>Function to identify country codes and names from a keyword seach.
+It also returns codes from aggregated spatial units.
+The function returns a pandas dataframe of country codes and countries matching the search,
+which can be done by normal string methods (the default) or a regular expression
+The search operates on cached data or calls country_codes if the cache is empty.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keyword</strong> (<em>str</em><em> or </em><em>regular expression</em>) – The keyword or regular expression to search. Not case-sensitive.</p></li>
+<li><p><strong>regex</strong> (<em>bool</em><em> (</em><em>optional</em><em>)</em><em>, </em><em>default=False</em>) – Whether the keyword should be searched as a regular expression.
+Defaults to False, in which case normal string matching is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>match</strong> – A DataFrame of matched results, including country code and country.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.core.frame.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">searches</span><span class="o">.</span><span class="n">country_search</span><span class="p">(</span><span class="s2">&quot;germany&quot;</span><span class="p">)</span>
+<span class="go">Returns keyword matches for simple string search &quot;germany&quot;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">searches</span><span class="o">.</span><span class="n">country_search</span><span class="p">(</span><span class="s2">&quot;^B.*a$&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">Returns matches for countries starting with B and ending in a</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="imfpy.searches.country_codes">
+<span class="sig-prename descclassname"><span class="pre">imfpy.searches.</span></span><span class="sig-name descname"><span class="pre">country_codes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/imfpy/searches.html#country_codes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#imfpy.searches.country_codes" title="Permalink to this definition"></a></dt>
+<dd><p>Function returns a dataframe of all IMF countries and codes for which data can be accessed through the JSON API.
+The resulting dataframe is cached to the local environment using a simple technique.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>database_cache</strong> – A DataFrame of all country names and codes, cached to local environment.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.core.frame.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">searches</span><span class="o">.</span><span class="n">country_codes</span><span class="p">()</span>
+<span class="go">Returns country codes and caches to local environment.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="imfpy.searches.database_codes">
+<span class="sig-prename descclassname"><span class="pre">imfpy.searches.</span></span><span class="sig-name descname"><span class="pre">database_codes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/imfpy/searches.html#database_codes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#imfpy.searches.database_codes" title="Permalink to this definition"></a></dt>
+<dd><p>Function returns a dataframe of all IMF databases from which data can be accessed through the JSON API.
+The resulting dataframe is cached to the local environment using a simple technique.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>database_cache</strong> – A DataFrame of all Database names and codes, cached to local environment.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.core.frame.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">searches</span><span class="o">.</span><span class="n">database_codes</span><span class="p">()</span>
+<span class="go">Returns database codes and caches to local environment.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="imfpy.searches.database_search">
+<span class="sig-prename descclassname"><span class="pre">imfpy.searches.</span></span><span class="sig-name descname"><span class="pre">database_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keyword</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/imfpy/searches.html#database_search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#imfpy.searches.database_search" title="Permalink to this definition"></a></dt>
+<dd><p>Function to identify database codes and names from a keyword seach.
+The function returns a pandas dataframe of database codes and databases matching the search,
+which can be done by normal string methods (the default) or a regular expression
+The search operates on cached data or calls database_codes if the cache is empty.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keyword</strong> (<em>str</em><em> or </em><em>regular expression</em>) – The keyword or regular expression to search. Not case-sensitive.</p></li>
+<li><p><strong>regex</strong> (<em>bool</em><em> (</em><em>optional</em><em>)</em><em>, </em><em>default=False</em>) – Whether the keyword should be searched as a regular expression.
+Defaults to False, in which case normal string matching is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>match</strong> – A DataFrame of matched results, including database code and database.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.core.frame.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">searches</span><span class="o">.</span><span class="n">database_search</span><span class="p">(</span><span class="s2">&quot;development&quot;</span><span class="p">)</span>
+<span class="go">Returns keyword matches for simple string search &quot;development&quot;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">searches</span><span class="o">.</span><span class="n">database_search</span><span class="p">(</span><span class="s2">&quot;^Financial.*&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">Returns matches for databases that start with &quot;Financial&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="imfpy.searches.database_info">
+<span class="sig-prename descclassname"><span class="pre">imfpy.searches.</span></span><span class="sig-name descname"><span class="pre">database_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/imfpy/searches.html#database_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#imfpy.searches.database_info" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the high-level information on a particular user-specified database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>database_id</strong> (<em>str</em>) – The database ID of the database of interest.
+Checks against database cache to validate input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>info</strong> – A DataFrame of information (update time, name, definition, methodology, etc.)
+about the specified database.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.core.frame.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">searches</span><span class="o">.</span><span class="n">database_info</span><span class="p">(</span><span class="s1">&#39;FSI&#39;</span><span class="p">)</span>
+<span class="go">Returns information about the database &#39;FSI&#39; (Financial Soundness Indicators)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="imfpy.searches.database_dimensions">
+<span class="sig-prename descclassname"><span class="pre">imfpy.searches.</span></span><span class="sig-name descname"><span class="pre">database_dimensions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/imfpy/searches.html#database_dimensions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#imfpy.searches.database_dimensions" title="Permalink to this definition"></a></dt>
+<dd><p>This function returns the dimensions of a particular user-specified database.
+Database dimensions are effectively indicator collections indexed by an indicator_id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>database_id</strong> (<em>str</em>) – The database ID of the database of interest.
+Checks against database cache to validate input.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dimensions</strong> – A DataFrame of dimensions (typically frequencies, spatial units and indicators)
+that can be accessed through the specified database</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.core.frame.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">searches</span><span class="o">.</span><span class="n">database_dimensions</span><span class="p">(</span><span class="s1">&#39;FSI&#39;</span><span class="p">)</span>
+<span class="go">Returns dimensions of the database &#39;FSI&#39; (Financial Soundness Indicators)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="imfpy.searches.indicator_dimensions">
+<span class="sig-prename descclassname"><span class="pre">imfpy.searches.</span></span><span class="sig-name descname"><span class="pre">indicator_dimensions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indicator_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/imfpy/searches.html#indicator_dimensions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#imfpy.searches.indicator_dimensions" title="Permalink to this definition"></a></dt>
+<dd><p>Function returns a dataframe of indicator dimensions and series IDs
+(i.e. the most granular unit of data apart from individual values)
+for a given user-specified indicator ID.
+Indicator dimensions are single time series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>indicator_id</strong> (<em>str</em>) – The indicator ID of the indicator of interest.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>indicator_dimensions</strong> – A DataFrame of indicator dimensions or series that can be accessed via a particular indicator_id</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.core.frame.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">searches</span><span class="o">.</span><span class="n">indicator_dimensions</span><span class="p">(</span><span class="s1">&#39;CL_INDICATOR_FSI&#39;</span><span class="p">)</span>
+<span class="go">Returns indicators dimensions and series for the indicator ID &#39;CL_INDICATOR_FSI&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../retrievals/index.html" class="btn btn-neutral float-left" title="imfpy.retrievals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../tools/index.html" class="btn btn-neutral float-right" title="imfpy.tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Liam Tay Kearney.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

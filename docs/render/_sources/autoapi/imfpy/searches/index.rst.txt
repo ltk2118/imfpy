@@ -1,0 +1,183 @@
+:py:mod:`imfpy.searches`
+========================
+
+.. py:module:: imfpy.searches
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   imfpy.searches.country_search
+   imfpy.searches.country_codes
+   imfpy.searches.database_codes
+   imfpy.searches.database_search
+   imfpy.searches.database_info
+   imfpy.searches.database_dimensions
+   imfpy.searches.indicator_dimensions
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   imfpy.searches.country_cache
+   imfpy.searches.database_cache
+
+
+.. py:data:: country_cache
+   
+
+   Cache for countries data
+
+.. py:data:: database_cache
+   
+
+   Cache for databases data
+
+.. py:function:: country_search(keyword, regex=False)
+
+   Function to identify country codes and names from a keyword seach.
+   It also returns codes from aggregated spatial units.
+   The function returns a pandas dataframe of country codes and countries matching the search,
+   which can be done by normal string methods (the default) or a regular expression
+   The search operates on cached data or calls country_codes if the cache is empty.
+
+   :param keyword: The keyword or regular expression to search. Not case-sensitive.
+   :type keyword: str or regular expression
+   :param regex: Whether the keyword should be searched as a regular expression.
+                 Defaults to False, in which case normal string matching is used.
+   :type regex: bool (optional), default=False
+
+   :returns: **match** -- A DataFrame of matched results, including country code and country.
+   :rtype: pandas.core.frame.DataFrame
+
+   .. rubric:: Examples
+
+   >>> searches.country_search("germany")
+   Returns keyword matches for simple string search "germany"
+
+   >>> searches.country_search("^B.*a$", regex=True)
+   Returns matches for countries starting with B and ending in a
+
+
+.. py:function:: country_codes()
+
+   Function returns a dataframe of all IMF countries and codes for which data can be accessed through the JSON API.
+   The resulting dataframe is cached to the local environment using a simple technique.
+
+   :param None:
+
+   :returns: **database_cache** -- A DataFrame of all country names and codes, cached to local environment.
+   :rtype: pandas.core.frame.DataFrame
+
+   .. rubric:: Examples
+
+   >>> searches.country_codes()
+   Returns country codes and caches to local environment.
+
+
+.. py:function:: database_codes()
+
+   Function returns a dataframe of all IMF databases from which data can be accessed through the JSON API.
+   The resulting dataframe is cached to the local environment using a simple technique.
+
+   :param None:
+
+   :returns: **database_cache** -- A DataFrame of all Database names and codes, cached to local environment.
+   :rtype: pandas.core.frame.DataFrame
+
+   .. rubric:: Examples
+
+   >>> searches.database_codes()
+   Returns database codes and caches to local environment.
+
+
+.. py:function:: database_search(keyword, regex=False)
+
+   Function to identify database codes and names from a keyword seach.
+   The function returns a pandas dataframe of database codes and databases matching the search,
+   which can be done by normal string methods (the default) or a regular expression
+   The search operates on cached data or calls database_codes if the cache is empty.
+
+   :param keyword: The keyword or regular expression to search. Not case-sensitive.
+   :type keyword: str or regular expression
+   :param regex: Whether the keyword should be searched as a regular expression.
+                 Defaults to False, in which case normal string matching is used.
+   :type regex: bool (optional), default=False
+
+   :returns: **match** -- A DataFrame of matched results, including database code and database.
+   :rtype: pandas.core.frame.DataFrame
+
+   .. rubric:: Examples
+
+   >>> searches.database_search("development")
+   Returns keyword matches for simple string search "development"
+
+   >>> searches.database_search("^Financial.*", regex=True)
+   Returns matches for databases that start with "Financial"
+
+
+.. py:function:: database_info(database_id)
+
+   Returns the high-level information on a particular user-specified database.
+
+   :param database_id: The database ID of the database of interest.
+                       Checks against database cache to validate input.
+   :type database_id: str
+
+   :returns: **info** -- A DataFrame of information (update time, name, definition, methodology, etc.)
+             about the specified database.
+   :rtype: pandas.core.frame.DataFrame
+
+   .. rubric:: Examples
+
+   >>> searches.database_info('FSI')
+   Returns information about the database 'FSI' (Financial Soundness Indicators)
+
+
+.. py:function:: database_dimensions(database_id)
+
+   This function returns the dimensions of a particular user-specified database.
+   Database dimensions are effectively indicator collections indexed by an indicator_id.
+
+   :param database_id: The database ID of the database of interest.
+                       Checks against database cache to validate input.
+   :type database_id: str
+
+   :returns: **dimensions** -- A DataFrame of dimensions (typically frequencies, spatial units and indicators)
+             that can be accessed through the specified database
+   :rtype: pandas.core.frame.DataFrame
+
+   .. rubric:: Examples
+
+   >>> searches.database_dimensions('FSI')
+   Returns dimensions of the database 'FSI' (Financial Soundness Indicators)
+
+
+.. py:function:: indicator_dimensions(indicator_id)
+
+   Function returns a dataframe of indicator dimensions and series IDs
+   (i.e. the most granular unit of data apart from individual values)
+   for a given user-specified indicator ID.
+   Indicator dimensions are single time series.
+
+   :param indicator_id: The indicator ID of the indicator of interest.
+   :type indicator_id: str
+
+   :returns: **indicator_dimensions** -- A DataFrame of indicator dimensions or series that can be accessed via a particular indicator_id
+   :rtype: pandas.core.frame.DataFrame
+
+   .. rubric:: Examples
+
+   >>> searches.indicator_dimensions('CL_INDICATOR_FSI')
+   Returns indicators dimensions and series for the indicator ID 'CL_INDICATOR_FSI'
+
+

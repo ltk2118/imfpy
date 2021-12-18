@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>imfpy &mdash; imfpy  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="imfpy" href="example.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> imfpy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="example.html"><code class="docutils literal notranslate"><span class="pre">imfpy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html#user-guide">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">imfpy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>imfpy</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="imfpy">
+<h1>imfpy<a class="headerlink" href="#imfpy" title="Permalink to this headline"></a></h1>
+<p>A client for interacting with the <a class="reference external" href="https://datahelp.imf.org/knowledgebase/articles/667681-using-json-restful-web-service">IMF’s JSON RESTful API</a> with Python!! In particular, a tool for understanding, retrieving and exploring Direction of Trade Statistics (DoTS) data.</p>
+<p>This API client is intended to be useful for economic policymakers, researchers, government officials and more. Moving forward, I will add more functionality to each module, so that users may retrieve and analyse data from other IMF databases.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install imfpy
+</pre></div>
+</div>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<p>The package contains three modules:  <code class="docutils literal notranslate"><span class="pre">searches</span></code>, <code class="docutils literal notranslate"><span class="pre">retrievals</span></code>, <code class="docutils literal notranslate"><span class="pre">tools</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">searches</span></code> contains many helper functions that assist the user in searching through available IMF databases, dimensions, metadata and variables.</p>
+<p><code class="docutils literal notranslate"><span class="pre">retrievals</span></code> contains functions that retrieve data from important databases. For now, <code class="docutils literal notranslate"><span class="pre">retrievals</span></code> contains only <code class="docutils literal notranslate"><span class="pre">retrievals.dots()</span></code>, a function that pulls data from the DoTS database including imports, exports, two-way trade and trade balances for IMF countries and country-groups. The function handles flexible queries and formats the returned data to the user’s specifications.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">imfpy.retrievals</span> <span class="kn">import</span> <span class="n">dots</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dots</span><span class="p">(</span><span class="s2">&quot;GR&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;US&quot;</span><span class="p">,</span> <span class="s2">&quot;AU&quot;</span><span class="p">,</span> <span class="s2">&quot;DE&quot;</span><span class="p">],</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2005</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="usage3" src="C:%5CUsers%5Cliamt%5CDocuments%5CGitHub%5Cimfpy%5Cimg%5Cusage3.png" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">tools</span></code> contains functions that conduct rudimentary analysis and visualization on the data returned by <code class="docutils literal notranslate"><span class="pre">retrievals</span></code> functions. For example, the <code class="docutils literal notranslate"><span class="pre">dotsplot</span></code> function transforms the result of <code class="docutils literal notranslate"><span class="pre">dots()</span></code> into time series plots.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">imfpy.tools</span> <span class="kn">import</span> <span class="n">dotsplot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">dots</span><span class="p">(</span><span class="s1">&#39;AU&#39;</span><span class="p">,[</span><span class="s1">&#39;US&#39;</span><span class="p">,</span><span class="s1">&#39;CN&#39;</span><span class="p">],</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s2">&quot;long&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dotsplot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Trade Balance&#39;</span><span class="p">,</span> <span class="s1">&#39;Twoway Trade&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<img src="C:\Users\liamt\Documents\GitHub\imfpy\img\usage.png" alt="usage" style="zoom:50%;" />
+<img src="C:\Users\liamt\Documents\GitHub\imfpy\img\usage2.png" alt="usage2" style="zoom:50%;" />
+</section>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline"></a></h2>
+<p>Full documentation</p>
+<p>Vignettes</p>
+<p>PyPI package</p>
+<p>Github Repo</p>
+<p>Tests</p>
+</section>
+<section id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline"></a></h2>
+<p>Interested in contributing?  Please get in touch! Check out the contributing guidelines.</p>
+<p>Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.</p>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">imfpy</span></code> was created by Liam Tay Kearney. It is licensed under the terms of the MIT license.</p>
+</section>
+<section id="credits">
+<h2>Credits<a class="headerlink" href="#credits" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">imfpy</span></code> was created with <a class="reference external" href="https://cookiecutter.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">cookiecutter</span></code></a> and the <code class="docutils literal notranslate"><span class="pre">py-pkgs-cookiecutter</span></code> <a class="reference external" href="https://github.com/py-pkgs/py-pkgs-cookiecutter">template</a>.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="example.html" class="btn btn-neutral float-right" title="imfpy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Liam Tay Kearney.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

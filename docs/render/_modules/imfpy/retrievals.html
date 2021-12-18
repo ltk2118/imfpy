@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>imfpy.retrievals &mdash; imfpy  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> imfpy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../example.html"><code class="docutils literal notranslate"><span class="pre">imfpy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../example.html#user-guide">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">imfpy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>imfpy.retrievals</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for imfpy.retrievals</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="dots"><a class="viewcode-back" href="../../autoapi/imfpy/retrievals/index.html#imfpy.retrievals.dots">[docs]</a><span></span><span class="k">def</span> <span class="nf">dots</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">counterparts</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s2">&quot;wide&quot;</span><span class="p">):</span>
+    
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Highly flexible function to return time series trade data between countries from the IMF Direction of Trade (DOTS) Database.</span>
+<span class="sd">    The function sends a get request to the IMF JSON RESTful API. </span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    country : str</span>
+<span class="sd">        Country code for home country. </span>
+<span class="sd">        Use searches.country_codes() for a list of codes.</span>
+<span class="sd">        Use searches.country_search(&quot;keyword&quot;) to search countries</span>
+<span class="sd">    counterparts : str or list</span>
+<span class="sd">        Country code(s) for the counterpart country (or countries)</span>
+<span class="sd">        Use searches.country_codes() for a list of codes.</span>
+<span class="sd">        Use searches.country_search(&quot;keyword&quot;) to search countries</span>
+<span class="sd">    start: int or float</span>
+<span class="sd">        Start date of the series. </span>
+<span class="sd">        Years may be entered as int dtype, such as 1980</span>
+<span class="sd">        Month start dates, such as 1980.02 (float) are acceptable.</span>
+<span class="sd">        Numbers such as 1980.00 and 1980.14 are unacceptable.</span>
+<span class="sd">    end: int or float</span>
+<span class="sd">        Same as start date but end of the series.</span>
+<span class="sd">    freq: str</span>
+<span class="sd">        Frequency of the time series (intervals)</span>
+<span class="sd">        Default: &#39;A&#39; - annual</span>
+<span class="sd">        Alternatives: &#39;M&#39; - monthly</span>
+<span class="sd">        Note, freq &quot;A&quot; will override start dates entered as months, such as 1980.02</span>
+<span class="sd">        In this case, start will be rounded down to the nearest whole year</span>
+<span class="sd">        And end will be rounded up to the nearest whole year</span>
+<span class="sd">    form: str</span>
+<span class="sd">        If multiple counterparts, should the returned data be wide-form or long-form?</span>
+<span class="sd">        Default: &#39;wide&#39; (MultiIndex)</span>
+<span class="sd">        Alternatives: &#39;long&#39;</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    full_df : pandas.core.frame.DataFrame</span>
+<span class="sd">        DataFrame with trade statistics.</span>
+<span class="sd">        If multiple counterpart countries are selected and wide-form data is requested,</span>
+<span class="sd">        the resulting DataFrame will be multiIndexed/hierarchical</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; dots(&#39;US&#39;, &#39;CN&#39;, 1995, 2020)</span>
+<span class="sd">    Returns wide-form US-China annual data between 1995 and 2020.</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; dots(&#39;MX&#39;,&#39;W00&#39;, 2010, 2020, freq=&#39;M&#39;)</span>
+<span class="sd">    Returns wide-form Mexico-World monthly data between 2010 and 2020.</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; dots(&quot;GR&quot;, [&quot;US&quot;, &quot;AU&quot;, &quot;DE&quot;], 1998, 2018)</span>
+<span class="sd">    Returns wide-form Greece annual data vs. the U.S., Australia and Germany </span>
+<span class="sd">    Between 1998 and 2018.</span>
+<span class="sd">        </span>
+<span class="sd">    &gt;&gt;&gt; dots(&quot;XS25&quot;, [&quot;JP&quot;, &quot;KR&quot;], 2000.05, 2020.09, freq=&quot;M&quot;, form=&quot;long&quot;)</span>
+<span class="sd">    Returns long-form monthly data from Developing Asia vs. Japan and Korea</span>
+<span class="sd">    Between May 2005 and September 2009</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">#validate input datatypes</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="nb">str</span><span class="p">),</span> <span class="s2">&quot;country must be a str&quot;</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">counterparts</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">)),</span> <span class="s2">&quot;counterparts must be a str or list&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">counterparts</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">counterparts</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;counterparts must be a str or list of length 2 or more&quot;</span>
+        <span class="k">assert</span> <span class="n">country</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">counterparts</span><span class="p">,</span> <span class="s2">&quot;country must not be in counterparts&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">country</span> <span class="o">!=</span> <span class="n">counterparts</span><span class="p">,</span> <span class="s2">&quot;country and counterpart must not be the same&quot;</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">)),</span><span class="s2">&quot;start must be a number&quot;</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">end</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">)),</span> <span class="s2">&quot;end must be a number&quot;</span>
+    <span class="k">assert</span> <span class="n">freq</span><span class="o">==</span><span class="s2">&quot;M&quot;</span> <span class="ow">or</span> <span class="n">freq</span><span class="o">==</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;frequency must be M or A&quot;</span>
+    <span class="k">assert</span> <span class="n">form</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;long&#39;</span><span class="p">,</span> <span class="s1">&#39;wide&#39;</span><span class="p">],</span> <span class="s2">&quot;form must be long or wide&quot;</span>
+    <span class="k">assert</span> <span class="n">start</span> <span class="o">&gt;</span> <span class="mi">1800</span> <span class="ow">and</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="mi">2200</span><span class="p">,</span> <span class="s2">&quot;start must be a reasonable date&quot;</span>
+    <span class="k">assert</span> <span class="n">end</span> <span class="o">&gt;</span> <span class="mi">1800</span> <span class="ow">and</span> <span class="n">end</span> <span class="o">&lt;</span> <span class="mi">2200</span><span class="p">,</span> <span class="s2">&quot;end must be a reasonable date&quot;</span>
+    <span class="k">assert</span> <span class="n">end</span> <span class="o">&gt;=</span> <span class="n">start</span><span class="p">,</span> <span class="s2">&quot;end must be after start&quot;</span>
+    
+    <span class="c1">#transform mismatchedfrequency and start/end dates, if applicable</span>
+    <span class="k">if</span> <span class="n">freq</span><span class="o">==</span><span class="s2">&quot;A&quot;</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">freq</span><span class="o">==</span><span class="s2">&quot;A&quot;</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">end</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">end</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+    
+    <span class="c1">#import libraries and define base URL for API</span>
+    <span class="kn">import</span> <span class="nn">requests</span><span class="o">,</span> <span class="nn">dateutil.parser</span>
+    <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+    <span class="n">start_url</span> <span class="o">=</span> <span class="s2">&quot;http://dataservices.imf.org/REST/SDMX_JSON.svc/&quot;</span>
+    
+    <span class="c1">#Specify all available series for trade (exports, imports and trade balance)</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="s1">&#39;TBG_USD+TXG_FOB_USD+TMG_CIF_USD&#39;</span> 
+    
+    <span class="c1">#define subfunction to handle single requests</span>
+    <span class="k">def</span> <span class="nf">retrieve</span><span class="p">(</span><span class="n">counterpart</span><span class="p">):</span>
+        
+        <span class="n">request</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">start_url</span><span class="si">}</span><span class="s1">CompactData/DOT/</span><span class="si">{</span><span class="n">freq</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">series</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">counterpart</span><span class="si">}</span><span class="s1">?startPeriod=</span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s1">&amp;endPeriod=</span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s1">&#39;</span>
+
+        <span class="c1">#Send the get request to the API</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+        
+        <span class="c1">#assert the response was 200 (OK)</span>
+        <span class="k">assert</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="o">==</span><span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;Error - HTTP Request unsuccessful. Please try again.&quot;</span>
+            
+        <span class="c1">#convert the data to subscriptable json </span>
+        <span class="n">data_json</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1">#extract exports, imports and trade balance portions of the JSON (they are lists)</span>
+            <span class="n">exports</span> <span class="o">=</span> <span class="n">data_json</span><span class="p">[</span><span class="s1">&#39;CompactData&#39;</span><span class="p">][</span><span class="s1">&#39;DataSet&#39;</span><span class="p">][</span><span class="s1">&#39;Series&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;Obs&#39;</span><span class="p">]</span>
+            <span class="n">imports</span> <span class="o">=</span> <span class="n">data_json</span><span class="p">[</span><span class="s1">&#39;CompactData&#39;</span><span class="p">][</span><span class="s1">&#39;DataSet&#39;</span><span class="p">][</span><span class="s1">&#39;Series&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;Obs&#39;</span><span class="p">]</span>
+            <span class="n">tbal</span> <span class="o">=</span> <span class="n">data_json</span><span class="p">[</span><span class="s1">&#39;CompactData&#39;</span><span class="p">][</span><span class="s1">&#39;DataSet&#39;</span><span class="p">][</span><span class="s1">&#39;Series&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;Obs&#39;</span><span class="p">]</span>
+            
+        <span class="c1">#if series is not found, throw an error.    </span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;One or more series not found. Please try again.&quot;</span><span class="p">)</span>
+
+        <span class="c1">#Make sure all series are the same length</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">exports</span><span class="p">)</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">imports</span><span class="p">),</span> <span class="s2">&quot;Error - data not available. Try a different time period or frequency.&quot;</span>
+    
+        <span class="c1">#Parse time periods and values for each series</span>
+        <span class="n">periods</span> <span class="o">=</span> <span class="p">[</span><span class="n">dateutil</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">obs</span><span class="p">[</span><span class="s1">&#39;@TIME_PERIOD&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="n">exports</span><span class="p">]</span>
+        <span class="n">values_exports</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">obs</span><span class="p">[</span><span class="s1">&#39;@OBS_VALUE&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="n">exports</span><span class="p">]</span>
+        <span class="n">values_imports</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">obs</span><span class="p">[</span><span class="s1">&#39;@OBS_VALUE&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="n">imports</span><span class="p">]</span>
+        <span class="n">values_tbal</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">obs</span><span class="p">[</span><span class="s1">&#39;@OBS_VALUE&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="n">tbal</span><span class="p">]</span>
+  
+        <span class="c1">#Convert to a pandas dataframe</span>
+        <span class="n">compile_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Period&#39;</span><span class="p">:</span><span class="n">periods</span><span class="p">,</span>
+                                <span class="s1">&#39;Exports&#39;</span><span class="p">:</span><span class="n">values_exports</span><span class="p">,</span> 
+                                <span class="s1">&#39;Imports&#39;</span><span class="p">:</span><span class="n">values_imports</span><span class="p">,</span> 
+                                <span class="s1">&#39;Trade Balance&#39;</span><span class="p">:</span><span class="n">values_tbal</span><span class="p">})</span>
+        
+        <span class="c1">#Inlucde a column for two-way trade (exports + imports)</span>
+        <span class="n">compile_df</span><span class="p">[</span><span class="s1">&#39;Twoway Trade&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">compile_df</span><span class="p">[</span><span class="s1">&#39;Exports&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">compile_df</span><span class="p">[</span><span class="s1">&#39;Imports&#39;</span><span class="p">]</span>
+    
+        <span class="c1">#Return the dataframe</span>
+        <span class="k">return</span> <span class="n">compile_df</span>
+    
+    <span class="c1">#subfunction to format date correctly based on user input frequency</span>
+    <span class="k">def</span> <span class="nf">format_date</span><span class="p">(</span><span class="n">full_df</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">freq</span><span class="o">==</span><span class="s2">&quot;A&quot;</span><span class="p">:</span>
+            <span class="n">full_df</span><span class="p">[</span><span class="s1">&#39;Period&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">full_df</span><span class="p">[</span><span class="s1">&#39;Period&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="s1">&#39;{:%Y}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">full_df</span><span class="p">[</span><span class="s1">&#39;Period&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">full_df</span><span class="p">[</span><span class="s1">&#39;Period&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="s1">&#39;{:%Y-%m}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>  
+        <span class="k">return</span> <span class="n">full_df</span>
+    
+    <span class="c1">#if counterparts is a list of countries, send a request for each country</span>
+    <span class="c1">#append it to a master dataframe in long form</span>
+    <span class="c1">#pivot to wide and return</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">counterparts</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        
+        <span class="n">full_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">counterpart</span> <span class="ow">in</span> <span class="n">counterparts</span><span class="p">:</span>
+            <span class="n">retrieved</span> <span class="o">=</span> <span class="n">retrieve</span><span class="p">(</span><span class="n">counterpart</span><span class="p">)</span>
+            <span class="n">retrieved</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;Counterpart&quot;</span><span class="p">,</span><span class="n">counterpart</span><span class="p">)</span>
+            <span class="n">full_df</span> <span class="o">=</span> <span class="n">full_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">retrieved</span><span class="p">)</span> <span class="c1">#if long-form data requested, stop here</span>
+        
+        <span class="c1">#format dates correctly based on the user-specified frequency</span>
+        <span class="n">full_df</span> <span class="o">=</span> <span class="n">format_date</span><span class="p">(</span><span class="n">full_df</span><span class="p">)</span>
+        
+        <span class="k">if</span><span class="p">(</span><span class="n">form</span><span class="o">==</span><span class="s2">&quot;wide&quot;</span><span class="p">):</span> <span class="c1">#otherwise, pivot to wide form data</span>
+            <span class="n">full_df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span><span class="n">country</span><span class="p">)</span>
+            <span class="n">full_df</span> <span class="o">=</span> <span class="n">full_df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Period&quot;</span><span class="p">,</span>
+                    <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;Counterpart&#39;</span><span class="p">,</span> 
+                    <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Exports&#39;</span><span class="p">,</span> <span class="s1">&#39;Imports&#39;</span><span class="p">,</span> <span class="s1">&#39;Trade Balance&#39;</span><span class="p">,</span> <span class="s1">&#39;Twoway Trade&#39;</span><span class="p">])</span>
+            <span class="n">full_df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span><span class="n">country</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">full_df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span><span class="n">country</span><span class="p">)</span> <span class="c1">#if long-form data, insert country at position 1</span>
+        
+    <span class="c1">#if counterparts is a single country, create columns for country, counterpart</span>
+    <span class="c1">#and return the result of that single request</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">full_df</span> <span class="o">=</span> <span class="n">retrieve</span><span class="p">(</span><span class="n">counterparts</span><span class="p">)</span>
+        <span class="n">full_df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span><span class="n">country</span><span class="p">)</span>
+        <span class="n">full_df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;Counterpart&#39;</span><span class="p">,</span><span class="n">counterparts</span><span class="p">)</span>
+        
+        <span class="c1">#format dates correctly based on the user-specified frequency</span>
+        <span class="n">full_df</span> <span class="o">=</span> <span class="n">format_date</span><span class="p">(</span><span class="n">full_df</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">full_df</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Liam Tay Kearney.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

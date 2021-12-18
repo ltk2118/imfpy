@@ -1,0 +1,25 @@
+:py:mod:`imfpy`
+===============
+
+.. py:module:: imfpy
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   retrievals/index.rst
+   searches/index.rst
+   tools/index.rst
+
+
+Package Contents
+----------------
+
+.. py:data:: __version__
+   
+
+   
+

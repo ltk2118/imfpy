@@ -1,0 +1,53 @@
+:py:mod:`imfpy.tools`
+=====================
+
+.. py:module:: imfpy.tools
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   imfpy.tools.dotsplot
+
+
+
+.. py:function:: dotsplot(dots_dataframe, subset=['Exports', 'Imports', 'Trade Balance'])
+
+    A flexible function for plotting a time series of returned dots data
+    I plan to expand this functionality later to handle wide-form data.
+
+    Parameters
+    ----------
+    dots_dataframe : pandas.core.frame.DataFrame (required)
+        A long-form DataFrame output from retrievals.dots
+        Or a wide-from DataFrame output with a single counterpart country
+    subset : list (optional), default=['Exports', 'Imports', 'Trade Balance']
+        A list containing the variables the user wishes to plot.
+        Combinations of 'Exports', 'Imports', 'Twoway Trade' and 'Trade Balance' are allowed.
+
+   :returns: * **Grouped plot** (*list of Line2D (matplotlib)*)
+             * *Time series plots of trade data.*
+
+   .. rubric:: Examples
+
+   >>> d = dots('US', 'CN', 1995, 2020)
+   dotsplot(d)
+   Plots annnual time series data of US-China trade from 1995 to 2020
+   For the default variables Exports, Imports and Trade Balance
+
+   >>> d = dots('MX','W00', 2010, 2020, freq='M')
+   dotsplot(d, subset=['Imports'])
+   Plots monthly time series data of Mexico-Worldwide imports from 2010 to 2020
+
+   >>> dotsplot(dots("GR", ["US", "AU", "DE"], 1998, 2018, "M", "long"))
+   Chained method, plots monthly time series data of Greece-U.S., Greece-Australia
+   and Greece-Germany trade from 1998 to 2018 for the default variables
+   Note: here three separate plots will be generated, one for each country-counterpart pair.
+
+

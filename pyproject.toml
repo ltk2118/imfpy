@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "imfpy"
+version = "0.1.17"
+description = "A client for interacting with the IMF's JSON RESTful API with Python!!"
+authors = ["Liam Tay Kearney"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pandas = "^1.1.3"
+requests = "^2.19.0"
+matplotlib = "^3.2.2"
+Sphinx = "^4.3.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+myst-nb = "^0.13.1"
+sphinx-autoapi = "^1.8.4"
+sphinx-rtd-theme = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

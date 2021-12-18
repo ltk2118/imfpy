@@ -1,0 +1,73 @@
+:py:mod:`imfpy.retrievals`
+==========================
+
+.. py:module:: imfpy.retrievals
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   imfpy.retrievals.dots
+
+
+
+.. py:function:: dots(country, counterparts, start, end, freq='A', form='wide')
+
+   Highly flexible function to return time series trade data between countries from the IMF Direction of Trade (DOTS) Database.
+   The function sends a get request to the IMF JSON RESTful API.
+
+   :param country: Country code for home country.
+                   Use searches.country_codes() for a list of codes.
+                   Use searches.country_search("keyword") to search countries
+   :type country: str (required)
+   :param counterparts: Country code(s) for the counterpart country (or countries)
+                        Use searches.country_codes() for a list of codes.
+                        Use searches.country_search("keyword") to search countries
+   :type counterparts: str or list (required)
+   :param start: Start date of the series.
+                 Years may be entered as int dtype, such as 1980
+                 Month start dates, such as 1980.02 (float) are acceptable.
+                 Numbers such as 1980.00 and 1980.14 are unacceptable.
+   :type start: int or float (reqiured)
+   :param end: Same as start date but end of the series.
+   :type end: int or float (required)
+   :param freq: Frequency of the time series (intervals)
+                Default: 'A' - annual
+                Alternatives: 'M' - monthly
+                Note, freq "A" will override start dates entered as months, such as 1980.02
+                In this case, start will be rounded down to the nearest whole year
+                And end will be rounded up to the nearest whole year
+   :type freq: str (optional, default='A')
+   :param form: If multiple counterparts, should the returned data be wide-form or long-form?
+                Default: 'wide' (MultiIndex)
+                Alternatives: 'long'
+   :type form: str (optional, default='A')
+
+   :returns: **full_df** -- DataFrame with trade statistics.
+             If multiple counterpart countries are selected and wide-form data is requested,
+             the resulting DataFrame will be multiIndexed/hierarchical
+   :rtype: pandas.core.frame.DataFrame
+
+   .. rubric:: Examples
+
+   >>> dots('US', 'CN', 1995, 2020)
+   Returns wide-form US-China annual data between 1995 and 2020.
+
+   >>> dots('MX','W00', 2010, 2020, freq='M')
+   Returns wide-form Mexico-World monthly data between 2010 and 2020.
+
+   >>> dots("GR", ["US", "AU", "DE"], 1998, 2018)
+   Returns wide-form Greece annual data vs. the U.S., Australia and Germany
+   Between 1998 and 2018.
+
+   >>> dots("XS25", ["JP", "KR"], 2000.05, 2020.09, freq="M", form="long")
+   Returns long-form monthly data from Developing Asia vs. Japan and Korea
+   Between May 2005 and September 2009
+
+
