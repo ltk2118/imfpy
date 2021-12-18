@@ -52,7 +52,7 @@ For example, `retrievals.dots` pulls data from the DoTS database including impor
 
 <img src="https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage.png" style="zoom:60%;" />
 
-<img src="https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage2.png" style="zoom:60%; class="center";" />
+<img src="https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage2.png" style="zoom:60%;" />
 
 ## Links
 
