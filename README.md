@@ -50,18 +50,16 @@ For example, `retrievals.dots` pulls data from the DoTS database including impor
 >>> dotsplot(d, subset=['Trade Balance', 'Twoway Trade'])
 ```
 
-<img src="https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage.png" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage.png" style="zoom:60%;" />
 
-<img src="https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage2.png" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage2.png" style="zoom:60%;" />
 
 ## Links
 
 **Documentation**
 
 * [User Guide/Vignette](https://imfpy.readthedocs.io/en/latest/example.html#user-guide)
-
 * [Full documentation](https://imfpy.readthedocs.io/en/latest/)
-
 * [API Reference](https://imfpy.readthedocs.io/en/latest/autoapi/index.html)
 
 **Distribution**
