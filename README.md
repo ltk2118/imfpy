@@ -23,7 +23,7 @@ The package contains three modules:  `searches`, `retrievals`, `tools`.
 >>> dots("GR", ["US", "AU", "DE"], 2000, 2005)
 ```
 
-![usage3](C:\Users\liamt\Documents\GitHub\imfpy\img\usage3.png)
+![usage3](https://github.com/ltk2118/imfpy/blob/main/img/usage3.png)
 
 `tools` contains functions that conduct rudimentary analysis and visualization on the data returned by `retrievals` functions. For example, the `dotsplot` function transforms the result of `dots()` into time series plots.
 
