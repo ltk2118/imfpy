@@ -41,7 +41,9 @@ The package contains three modules:  `searches`, `retrievals`, `tools`.
 
 [Full documentation](https://imfpy.readthedocs.io/en/latest/)
 
-[Vignettes](https://github.com/ltk2118/imfpy/blob/main/vignettes/imfpy_vignette.ipynb)
+[Vignettes](https://github.com/ltk2118/imfpy/blob/main/vignettes/imfpy_vignette.ipynb) 
+
+[User Guide](https://imfpy.readthedocs.io/en/latest/example.html#user-guide)
 
 PyPI package
 
