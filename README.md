@@ -49,11 +49,11 @@ For example, `retrievals.dots` pulls data from the DoTS database including impor
 >>> d = dots('AU',['US','CN'], 2000, 2020, freq='A', form="long")
 >>> dotsplot(d, subset=['Trade Balance', 'Twoway Trade'])
 ```
-
+<p align="center">
 <img src="https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage.png" style="zoom:60%;" />
 
 <img src="https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage2.png" style="zoom:60%;" />
-
+</p>
 ## Links
 
 **Documentation**
@@ -81,7 +81,6 @@ For example, `retrievals.dots` pulls data from the DoTS database including impor
 ## Contributing
 
 Interested in contributing? Want to use this package?  Please get in touch! Check out the contributing guidelines. 
-
 Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.
 
 ## License
