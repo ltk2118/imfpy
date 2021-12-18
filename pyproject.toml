@@ -1,9 +1,11 @@
 [tool.poetry]
 name = "imfpy"
-version = "0.0.1"
-description = "A client for interacting with the IMF's JSON RESTful API with Python!!"
+version = "0.0.2"
+description = "A client for interacting with the IMF's JSON RESTful API with Python!"
 authors = ["Liam Tay Kearney"]
+keywords = ["Trade", "IMF", "DOTS"]
 license = "MIT"
+homepage = "https://github.com/ltk2118/imfpy"
 readme = "README.md"
 
 [tool.poetry.dependencies]

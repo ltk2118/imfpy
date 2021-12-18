@@ -5,26 +5,24 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>imfpy User Guide &mdash; imfpy  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
-      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
+    <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/togglebutton.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Changelog" href="changelog.html" />
-    <link rel="prev" title="imfpy" href="index.html" /> 
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -32,56 +30,22 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> imfpy
+            <a href="../index.html" class="icon icon-home"> imfpy
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">imfpy</span></code> User Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-imfpy-searches">Module <code class="docutils literal notranslate"><span class="pre">imfpy.searches</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#searches-country-codes"><code class="docutils literal notranslate"><span class="pre">searches.country_codes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#searches-country-search"><code class="docutils literal notranslate"><span class="pre">searches.country_search</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#searches-database-codes"><code class="docutils literal notranslate"><span class="pre">searches.database_codes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#searches-database-search"><code class="docutils literal notranslate"><span class="pre">searches.database_search</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#searches-database-info"><code class="docutils literal notranslate"><span class="pre">searches.database_info</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#searches-database-dimensions"><code class="docutils literal notranslate"><span class="pre">searches.database_dimensions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#searches-indicator-dimensions"><code class="docutils literal notranslate"><span class="pre">searches.indicator_dimensions</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#module-imfpy-retrievals">Module <code class="docutils literal notranslate"><span class="pre">imfpy.retrievals</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#retrievals-dots"><code class="docutils literal notranslate"><span class="pre">retrievals.dots</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#annual-data-one-counterpart">1. Annual data, one counterpart</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#monthly-data-one-counterpart">2. Monthly data, one counterpart</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#annual-data-multiple-counterparts-wide-form">3. Annual data, multiple counterparts, wide form</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#annual-data-multiple-counterparts-long-form">4. Annual data, multiple counterparts, long form</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#monthly-data-multiple-counterparts-month-start-and-end-date">5. Monthly data, multiple counterparts, month start and end date</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#annual-data-multiple-counterparts-month-start-and-end-date">6. Annual data, multiple counterparts, month start and end date</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#module-3-imfpy-tools">Module 3: <code class="docutils literal notranslate"><span class="pre">imfpy.tools</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#tools-dotsplot"><code class="docutils literal notranslate"><span class="pre">tools.dotsplot</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#plot-annual-time-series-for-one-counterpart">1. Plot annual time series for one counterpart</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#plot-annual-time-series-selected-by-user-for-one-counterpart">2. Plot annual time series, selected by user, for one counterpart</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#plot-monthly-time-series-for-multiple-countries-in-a-single-command">3. Plot monthly time series for multiple countries in a single command</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conduct.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">API Reference</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../example.html"><code class="docutils literal notranslate"><span class="pre">imfpy</span></code> User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoapi/index.html">API Reference</a></li>
 </ul>
 
         </div>
@@ -90,17 +54,17 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">imfpy</a>
+          <a href="../index.html">imfpy</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
       <li><code class="docutils literal notranslate"><span class="pre">imfpy</span></code> User Guide</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/example.ipynb.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/jupyter_execute/example.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -144,29 +108,27 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: imfpy in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (0.1.18)
+Requirement already satisfied: requests&lt;3.0.0,&gt;=2.19.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from imfpy) (2.26.0)
+Requirement already satisfied: pandas&lt;2.0.0,&gt;=1.1.3 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from imfpy) (1.1.5)
+Requirement already satisfied: matplotlib&lt;4.0.0,&gt;=3.2.2 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from imfpy) (3.5.1)
+Requirement already satisfied: numpy&gt;=1.17 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (1.21.1)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (3.0.6)
+Requirement already satisfied: python-dateutil&gt;=2.7 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (2.8.2)
+Requirement already satisfied: cycler&gt;=0.10 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (0.11.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (1.3.2)
+Requirement already satisfied: packaging&gt;=20.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (21.3)
+Requirement already satisfied: fonttools&gt;=4.22.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (4.28.4)
+Requirement already satisfied: pillow&gt;=6.2.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (8.4.0)
+Requirement already satisfied: pytz&gt;=2017.2 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from pandas&lt;2.0.0,&gt;=1.1.3-&gt;imfpy) (2021.3)
+Requirement already satisfied: six&gt;=1.5 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (1.16.0)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy) (3.3)
+Requirement already satisfied: charset-normalizer~=2.0.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy) (2.0.9)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy) (1.26.7)
+Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy) (2021.10.8)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: You are using pip version 21.2.4; however, version 21.3.1 is available.
 You should consider upgrading via the &#39;C:\Users\liamt\AppData\Local\pypoetry\Cache\virtualenvs\imfpy-iVYlR421-py3.9\Scripts\python.exe -m pip install --upgrade pip&#39; command.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests&lt;3.0.0,&gt;=2.19.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from imfpy) (2.26.0)
-Requirement already satisfied: pandas&lt;2.0.0,&gt;=1.1.3 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from imfpy) (1.1.5)
-Requirement already satisfied: matplotlib&lt;4.0.0,&gt;=3.2.2 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from imfpy) (3.5.1)
-Requirement already satisfied: packaging&gt;=20.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (21.3)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (1.3.2)
-Requirement already satisfied: fonttools&gt;=4.22.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (4.28.4)
-Requirement already satisfied: numpy&gt;=1.17 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (1.21.1)
-Requirement already satisfied: pillow&gt;=6.2.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (8.4.0)
-Requirement already satisfied: python-dateutil&gt;=2.7 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (2.8.2)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (3.0.6)
-Requirement already satisfied: cycler&gt;=0.10 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (0.11.0)
-Requirement already satisfied: pytz&gt;=2017.2 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from pandas&lt;2.0.0,&gt;=1.1.3-&gt;imfpy) (2021.3)
-Requirement already satisfied: six&gt;=1.5 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (1.16.0)
-Requirement already satisfied: charset-normalizer~=2.0.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy) (2.0.9)
-Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy) (2021.10.8)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy) (3.3)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy) (1.26.7)
 </pre></div>
 </div>
 </div>
@@ -1588,7 +1550,7 @@ All of the following requests will trigger an <code class="docutils literal notr
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_17172</span><span class="o">/</span><span class="mf">3366050960.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_5040</span><span class="o">/</span><span class="mf">3366050960.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dots</span><span class="p">(</span><span class="s2">&quot;CN&quot;</span><span class="p">,</span><span class="s2">&quot;MX&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;wide&quot;</span><span class="p">),</span> <span class="c1">#bad start year</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">dots</span><span class="p">(</span><span class="s2">&quot;CN&quot;</span><span class="p">,</span><span class="s2">&quot;CN&quot;</span><span class="p">,</span> <span class="mi">1980</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;wide&quot;</span><span class="p">),</span> <span class="c1">#country==counterparts</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">dots</span><span class="p">(</span><span class="s2">&quot;CN&quot;</span><span class="p">,[</span><span class="s2">&quot;MX&quot;</span><span class="p">],</span> <span class="mi">1980</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;wide&quot;</span><span class="p">),</span> <span class="c1">#counterparts is a list length 1</span>
@@ -1640,7 +1602,7 @@ All of the following requests will trigger an <code class="docutils literal notr
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
 </pre></div>
 </div>
-<img alt="_images/example_74_1.png" src="_images/example_74_1.png" />
+<img alt="../_images/example_74_11.png" src="../_images/example_74_11.png" />
 </div>
 </div>
 </section>
@@ -1659,8 +1621,8 @@ All of the following requests will trigger an <code class="docutils literal notr
 &lt;Response [200]&gt;
 </pre></div>
 </div>
-<img alt="_images/example_77_1.png" src="_images/example_77_1.png" />
-<img alt="_images/example_77_2.png" src="_images/example_77_2.png" />
+<img alt="../_images/example_77_11.png" src="../_images/example_77_11.png" />
+<img alt="../_images/example_77_21.png" src="../_images/example_77_21.png" />
 </div>
 </div>
 </section>
@@ -1681,10 +1643,10 @@ All of the following requests will trigger an <code class="docutils literal notr
 &lt;Response [200]&gt;
 </pre></div>
 </div>
-<img alt="_images/example_80_1.png" src="_images/example_80_1.png" />
-<img alt="_images/example_80_2.png" src="_images/example_80_2.png" />
-<img alt="_images/example_80_3.png" src="_images/example_80_3.png" />
-<img alt="_images/example_80_4.png" src="_images/example_80_4.png" />
+<img alt="../_images/example_80_11.png" src="../_images/example_80_11.png" />
+<img alt="../_images/example_80_21.png" src="../_images/example_80_21.png" />
+<img alt="../_images/example_80_31.png" src="../_images/example_80_31.png" />
+<img alt="../_images/example_80_41.png" src="../_images/example_80_41.png" />
 </div>
 </div>
 </section>
@@ -1695,10 +1657,7 @@ All of the following requests will trigger an <code class="docutils literal notr
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="imfpy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

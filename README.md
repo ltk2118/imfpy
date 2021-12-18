@@ -1,8 +1,10 @@
 # imfpy
 
-A client for interacting with the [IMF's JSON RESTful API](https://datahelp.imf.org/knowledgebase/articles/667681-using-json-restful-web-service) with Python!! In particular, a tool for understanding, retrieving and exploring Direction of Trade Statistics (DoTS) data. 
+A package for interacting with the [IMF's JSON RESTful API](https://datahelp.imf.org/knowledgebase/articles/667681-using-json-restful-web-service) with Python!! In this preliminary phase, the package is a tool for understanding, retrieving and exploring Direction of Trade Statistics (DoTS) data. 
 
-This API client is intended to be useful for economic policymakers, researchers, government officials and more. Moving forward, I will add more functionality to each module, so that users may retrieve and analyse data from other IMF databases.
+This API client is intended to be useful for economic policymakers, researchers, government officials and more. The package enables the efficient retrieval of trade statistics from any country or country group over the span for which the IMF has data. Functions are designed to be easy-to-understand and adaptive to multiple query types.
+
+Moving forward, I will add more functionality to each module, so that users may retrieve and analyse data from other IMF databases.
 
 ## Installation
 
@@ -37,6 +39,8 @@ For example, `retrievals.dots` pulls data from the DoTS database including impor
 >>> dots("GR", ["US", "AU", "DE"], 2000, 2005)
 ```
 
+![](https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage5.png)
+
 `tools` contains functions that conduct rudimentary analysis and visualization on the data returned by `retrievals` functions. For example, the `dotsplot` function transforms the result of `dots()` into time series plots.
 
 ```python
@@ -46,7 +50,9 @@ For example, `retrievals.dots` pulls data from the DoTS database including impor
 >>> dotsplot(d, subset=['Trade Balance', 'Twoway Trade'])
 ```
 
+<img src="https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage.png" style="zoom:50%;" />
 
+<img src="https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage2.png" style="zoom:50%;" />
 
 ## Links
 
@@ -61,10 +67,11 @@ For example, `retrievals.dots` pulls data from the DoTS database including impor
 **Distribution**
 
 * [Github Repo](https://github.com/ltk2118/imfpy)
+* [Github Dist](https://github.com/ltk2118/imfpy/tree/main/dist)
+* [PyPI](https://pypi.org/project/imfpy/)
+* [Test PyPI](https://test.pypi.org/project/imfpy/)
 
-* PyPI package
-
-**Tests**
+**Testing**
 
 * [Pytests](https://github.com/ltk2118/imfpy/blob/main/tests/test_imfpy.py)
 

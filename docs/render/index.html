@@ -75,8 +75,9 @@
              
   <section class="tex2jax_ignore mathjax_ignore" id="imfpy">
 <h1>imfpy<a class="headerlink" href="#imfpy" title="Permalink to this headline"></a></h1>
-<p>A client for interacting with the <a class="reference external" href="https://datahelp.imf.org/knowledgebase/articles/667681-using-json-restful-web-service">IMF’s JSON RESTful API</a> with Python!! In particular, a tool for understanding, retrieving and exploring Direction of Trade Statistics (DoTS) data.</p>
-<p>This API client is intended to be useful for economic policymakers, researchers, government officials and more. Moving forward, I will add more functionality to each module, so that users may retrieve and analyse data from other IMF databases.</p>
+<p>A package for interacting with the <a class="reference external" href="https://datahelp.imf.org/knowledgebase/articles/667681-using-json-restful-web-service">IMF’s JSON RESTful API</a> with Python!! In this preliminary phase, the package is a tool for understanding, retrieving and exploring Direction of Trade Statistics (DoTS) data.</p>
+<p>This API client is intended to be useful for economic policymakers, researchers, government officials and more. The package enables the efficient retrieval of trade statistics from any country or country group over the span for which the IMF has data. Functions are designed to be easy-to-understand and adaptive to multiple query types.</p>
+<p>Moving forward, I will add more functionality to each module, so that users may retrieve and analyse data from other IMF databases.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install imfpy
@@ -106,6 +107,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">dots</span><span class="p">(</span><span class="s2">&quot;GR&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;US&quot;</span><span class="p">,</span> <span class="s2">&quot;AU&quot;</span><span class="p">,</span> <span class="s2">&quot;DE&quot;</span><span class="p">],</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2005</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><img alt="" src="https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage5.png" /></p>
 <p><code class="docutils literal notranslate"><span class="pre">tools</span></code> contains functions that conduct rudimentary analysis and visualization on the data returned by <code class="docutils literal notranslate"><span class="pre">retrievals</span></code> functions. For example, the <code class="docutils literal notranslate"><span class="pre">dotsplot</span></code> function transforms the result of <code class="docutils literal notranslate"><span class="pre">dots()</span></code> into time series plots.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example: plot Australia trade data</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">imfpy.tools</span> <span class="kn">import</span> <span class="n">dotsplot</span>
@@ -113,6 +115,8 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">dotsplot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Trade Balance&#39;</span><span class="p">,</span> <span class="s1">&#39;Twoway Trade&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
+<img src="https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage.png" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage2.png" style="zoom:50%;" />
 </section>
 <section id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this headline"></a></h2>
@@ -125,9 +129,11 @@
 <p><strong>Distribution</strong></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/ltk2118/imfpy">Github Repo</a></p></li>
-<li><p>PyPI package</p></li>
+<li><p><a class="reference external" href="https://github.com/ltk2118/imfpy/tree/main/dist">Github Dist</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/imfpy/">PyPI</a></p></li>
+<li><p><a class="reference external" href="https://test.pypi.org/project/imfpy/">Test PyPI</a></p></li>
 </ul>
-<p><strong>Tests</strong></p>
+<p><strong>Testing</strong></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/ltk2118/imfpy/blob/main/tests/test_imfpy.py">Pytests</a></p></li>
 </ul>

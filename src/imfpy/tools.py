@@ -69,4 +69,4 @@ def dotsplot(dots_dataframe, subset=['Exports', 'Imports', 'Trade Balance']):
     for ax in axes:
         ax.set_title(f'Home: {country}, Foreign: {titles[count]}')
         count+=1
-        plt.show()
+    plt.show()
