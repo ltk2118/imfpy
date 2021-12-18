@@ -39,7 +39,7 @@ The package contains three modules:  `searches`, `retrievals`, `tools`.
 
 ## Links
 
-Full documentation
+[Full documentation](https://imfpy.readthedocs.io/en/latest/)
 
 [Vignettes](https://github.com/ltk2118/imfpy/blob/main/vignettes/imfpy_vignette.ipynb)
 
