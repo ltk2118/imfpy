@@ -38,9 +38,10 @@ For example, `retrievals.dots` pulls data from the DoTS database including impor
 >>> from imfpy.retrievals import dots
 >>> dots("GR", ["US", "AU", "DE"], 2000, 2005)
 ```
-
+<p align="center">
 ![](https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage5.png)
-
+</p>
+  
 `tools` contains functions that conduct rudimentary analysis and visualization on the data returned by `retrievals` functions. For example, the `dotsplot` function transforms the result of `dots()` into time series plots.
 
 ```python
@@ -54,6 +55,7 @@ For example, `retrievals.dots` pulls data from the DoTS database including impor
 
 <img src="https://raw.githubusercontent.com/ltk2118/imfpy/main/img/usage2.png" style="zoom:60%;" />
 </p>
+
 ## Links
 
 **Documentation**
