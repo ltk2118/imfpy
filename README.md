@@ -45,9 +45,9 @@ Full documentation
 
 PyPI package
 
-Github Repo
+[IMF DOTS](https://data.imf.org/?sk=9D6028D4-F14A-464C-A2F2-59B2CD424B85)
 
-Tests
+[Tests](https://github.com/ltk2118/imfpy/blob/main/tests/test_imfpy.py)
 
 ## Contributing
 
