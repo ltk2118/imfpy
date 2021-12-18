@@ -33,9 +33,9 @@ The package contains three modules:  `searches`, `retrievals`, `tools`.
 >>> dotsplot(d, subset=['Trade Balance', 'Twoway Trade'])
 ```
 
-<img src="C:\Users\liamt\Documents\GitHub\imfpy\img\usage.png" alt="usage" style="zoom:50%;" />
+<img src="https://github.com/ltk2118/imfpy/blob/main/img/usage.png" alt="usage" style="zoom:50%;" />
 
-<img src="C:\Users\liamt\Documents\GitHub\imfpy\img\usage2.png" alt="usage2" style="zoom:50%;" />
+<img src="https://github.com/ltk2118/imfpy/blob/main/img/usage2.png" alt="usage2" style="zoom:50%;" />
 
 ## Links
 
