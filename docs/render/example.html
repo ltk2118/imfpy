@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>imfpy &mdash; imfpy  documentation</title>
+  <title>imfpy User Guide &mdash; imfpy  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
@@ -43,32 +43,35 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">imfpy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="#user-guide">User Guide</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">imfpy</span></code> User Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#submodule-1-imfpy-searches">Submodule 1: <code class="docutils literal notranslate"><span class="pre">imfpy.searches</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#searches-country-codes"><code class="docutils literal notranslate"><span class="pre">searches.country_codes()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#searches-country-search-keyword-regex-false"><code class="docutils literal notranslate"><span class="pre">searches.country_search(keyword,</span> <span class="pre">regex</span> <span class="pre">=</span> <span class="pre">False)</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#searches-database-codes"><code class="docutils literal notranslate"><span class="pre">searches.database_codes()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#searches-database-search-keyword-regex-false"><code class="docutils literal notranslate"><span class="pre">searches.database_search(keyword,</span> <span class="pre">regex</span> <span class="pre">=</span> <span class="pre">False)</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#searches-database-info-database-id"><code class="docutils literal notranslate"><span class="pre">searches.database_info(database_id)</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#searches-database-dimensions-database-id"><code class="docutils literal notranslate"><span class="pre">searches.database_dimensions(database_id)</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#searches-indicator-dimensions-indicator-id"><code class="docutils literal notranslate"><span class="pre">searches.indicator_dimensions(indicator_id)</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-imfpy-searches">Module <code class="docutils literal notranslate"><span class="pre">imfpy.searches</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#searches-country-codes"><code class="docutils literal notranslate"><span class="pre">searches.country_codes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#searches-country-search"><code class="docutils literal notranslate"><span class="pre">searches.country_search</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#searches-database-codes"><code class="docutils literal notranslate"><span class="pre">searches.database_codes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#searches-database-search"><code class="docutils literal notranslate"><span class="pre">searches.database_search</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#searches-database-info"><code class="docutils literal notranslate"><span class="pre">searches.database_info</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#searches-database-dimensions"><code class="docutils literal notranslate"><span class="pre">searches.database_dimensions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#searches-indicator-dimensions"><code class="docutils literal notranslate"><span class="pre">searches.indicator_dimensions</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#submodule-2-imfpy-retrievals">Submodule 2: <code class="docutils literal notranslate"><span class="pre">imfpy.retrievals</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#return-a-dataframe-of-u-s-china-annual-trade-data-from-1995-to-2020"><strong>1. Return a dataframe of U.S.-China annual trade data from 1995 to 2020.</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#return-a-dataframe-of-mexico-world-monthly-trade-data-from-2010-to-2020"><strong>2. Return a dataframe of Mexico-World monthly trade data from 2010 to 2020.</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#return-a-wide-form-dataframe-of-greece-u-s-and-greece-germany-annual-trade-data-from-2000-to-2019"><strong>3. Return a wide-form dataframe of Greece-U.S. and Greece-Germany annual trade data from 2000 to 2019.</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#return-a-long-form-dataframe-of-morocco-u-s-morocco-algeria-and-morocco-mozambique-annual-trade-data-from-2002-to-2003"><strong>4. Return a long-form dataframe of Morocco-U.S., Morocco-Algeria, and Morocco-Mozambique annual trade data from 2002 to 2003.</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#return-long-form-monthly-trade-data-from-developing-asia-vs-japan-and-korea-between-july-2000-and-september-2000"><strong>5. Return long-form monthly trade data from Developing Asia vs. Japan and Korea between July 2000 and September 2000</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-imfpy-retrievals">Module <code class="docutils literal notranslate"><span class="pre">imfpy.retrievals</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#retrievals-dots"><code class="docutils literal notranslate"><span class="pre">retrievals.dots</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#annual-data-one-counterpart">1. Annual data, one counterpart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#monthly-data-one-counterpart">2. Monthly data, one counterpart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#annual-data-multiple-counterparts-wide-form">3. Annual data, multiple counterparts, wide form</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#annual-data-multiple-counterparts-long-form">4. Annual data, multiple counterparts, long form</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#monthly-data-multiple-counterparts-month-start-and-end-date">5. Monthly data, multiple counterparts, month start and end date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#annual-data-multiple-counterparts-month-start-and-end-date">6. Annual data, multiple counterparts, month start and end date</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#submodule-3-imfpy-tools">Submodule 3: <code class="docutils literal notranslate"><span class="pre">imfpy.tools</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#dotsplot-dots-dataframe-subset-exports-imports-trade-balance"><code class="docutils literal notranslate"><span class="pre">dotsplot(dots_dataframe,</span> <span class="pre">subset=['Exports',</span> <span class="pre">'Imports',</span> <span class="pre">'Trade</span> <span class="pre">Balance'])</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#plot-annnual-time-series-data-of-us-china-trade-from-1995-to-2020-for-the-default-variables-exports-imports-and-trade-balance"><strong>1. Plot annnual time series data of US-China trade from 1995 to 2020 for the default variables Exports, Imports and Trade Balance</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#plot-annnual-time-series-data-of-australia-us-and-australia-china-trade-from-2000-to-2020-on-the-variables-trade-balance-and-two-way-trade"><strong>2. Plot annnual time series data of Australia-US and Australia-China trade from 2000 to 2020 on the variables <em>Trade Balance</em> and <em>Two-way Trade</em></strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#plot-monthly-time-series-data-of-denmark-us-and-denmark-new-zealand-denmark-germany-and-denmark-italy-trade-from-2000-to-2020-on-the-default-variables"><strong>2. Plot monthly time series data of Denmark-US and Denmark-New Zealand, Denmark-Germany and Denmark-Italy trade from 2000 to 2020 on the default variables</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-3-imfpy-tools">Module 3: <code class="docutils literal notranslate"><span class="pre">imfpy.tools</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tools-dotsplot"><code class="docutils literal notranslate"><span class="pre">tools.dotsplot</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#plot-annual-time-series-for-one-counterpart">1. Plot annual time series for one counterpart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plot-annual-time-series-selected-by-user-for-one-counterpart">2. Plot annual time series, selected by user, for one counterpart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plot-monthly-time-series-for-multiple-countries-in-a-single-command">3. Plot monthly time series for multiple countries in a single command</a></li>
 </ul>
 </li>
 </ul>
@@ -95,7 +98,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><code class="docutils literal notranslate"><span class="pre">imfpy</span></code></li>
+      <li><code class="docutils literal notranslate"><span class="pre">imfpy</span></code> User Guide</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/example.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -105,12 +108,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="imfpy">
-<h1><code class="docutils literal notranslate"><span class="pre">imfpy</span></code><a class="headerlink" href="#imfpy" title="Permalink to this headline"></a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="user-guide">
-<h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline"></a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">imfpy</span></code> is a python package for searching, retrieving and visualizing International Monetary Fund (IMF) Data</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="imfpy-user-guide">
+<h1><code class="docutils literal notranslate"><span class="pre">imfpy</span></code> User Guide<a class="headerlink" href="#imfpy-user-guide" title="Permalink to this headline"></a></h1>
+<p><strong><code class="docutils literal notranslate"><span class="pre">imfpy</span></code> is a python package for searching, retrieving and visualizing International Monetary Fund (IMF) Data.</strong></p>
 <p>This package interacts with the IMF’s JSON RESTful API. Documentation on the API is available here: https://datahelp.imf.org/knowledgebase/articles/667681-using-json-restful-web-service. A huge amount of macroeconomic and financial data are available from this IMF’s API, inlcuding (but not limited to):</p>
 <ul class="simple">
 <li><p>Trade (DOTS) data</p></li>
@@ -138,44 +138,40 @@
 <p>Installation can be accomplished easily via a pip install.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install -i https://test.pypi.org/simple/ <span class="nv">imfpy</span><span class="o">==</span><span class="m">0</span>.1.17
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install imfpy
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://test.pypi.org/simple/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: imfpy in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (0.1.18)
+Requirement already satisfied: requests&lt;3.0.0,&gt;=2.19.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from imfpy) (2.26.0)
+Requirement already satisfied: pandas&lt;2.0.0,&gt;=1.1.3 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from imfpy) (1.1.5)
+Requirement already satisfied: matplotlib&lt;4.0.0,&gt;=3.2.2 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from imfpy) (3.5.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (4.28.4)
+Requirement already satisfied: packaging&gt;=20.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (21.3)
+Requirement already satisfied: numpy&gt;=1.17 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (1.21.1)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (1.3.2)
+Requirement already satisfied: cycler&gt;=0.10 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (0.11.0)
+Requirement already satisfied: python-dateutil&gt;=2.7 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (2.8.2)
+Requirement already satisfied: pillow&gt;=6.2.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (8.4.0)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (3.0.6)
+Requirement already satisfied: pytz&gt;=2017.2 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from pandas&lt;2.0.0,&gt;=1.1.3-&gt;imfpy) (2021.3)
+Requirement already satisfied: six&gt;=1.5 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy) (1.16.0)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy) (1.26.7)
+Requirement already satisfied: charset-normalizer~=2.0.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy) (2.0.9)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy) (3.3)
+Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy) (2021.10.8)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: You are using pip version 21.2.4; however, version 21.3.1 is available.
 You should consider upgrading via the &#39;C:\Users\liamt\AppData\Local\pypoetry\Cache\virtualenvs\imfpy-iVYlR421-py3.9\Scripts\python.exe -m pip install --upgrade pip&#39; command.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: imfpy==0.1.17 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (0.1.17)
-Requirement already satisfied: matplotlib&lt;4.0.0,&gt;=3.2.2 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from imfpy==0.1.17) (3.5.1)
-Requirement already satisfied: pandas&lt;2.0.0,&gt;=1.1.3 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from imfpy==0.1.17) (1.1.5)
-Requirement already satisfied: requests&lt;3.0.0,&gt;=2.19.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from imfpy==0.1.17) (2.26.0)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy==0.1.17) (1.3.2)
-Requirement already satisfied: numpy&gt;=1.17 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy==0.1.17) (1.21.1)
-Requirement already satisfied: packaging&gt;=20.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy==0.1.17) (21.3)
-Requirement already satisfied: fonttools&gt;=4.22.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy==0.1.17) (4.28.4)
-Requirement already satisfied: python-dateutil&gt;=2.7 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy==0.1.17) (2.8.2)
-Requirement already satisfied: pillow&gt;=6.2.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy==0.1.17) (8.4.0)
-Requirement already satisfied: cycler&gt;=0.10 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy==0.1.17) (0.11.0)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy==0.1.17) (3.0.6)
-Requirement already satisfied: pytz&gt;=2017.2 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from pandas&lt;2.0.0,&gt;=1.1.3-&gt;imfpy==0.1.17) (2021.3)
-Requirement already satisfied: six&gt;=1.5 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib&lt;4.0.0,&gt;=3.2.2-&gt;imfpy==0.1.17) (1.16.0)
-Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy==0.1.17) (2021.10.8)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy==0.1.17) (1.26.7)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy==0.1.17) (3.3)
-Requirement already satisfied: charset-normalizer~=2.0.0 in c:\users\liamt\appdata\local\pypoetry\cache\virtualenvs\imfpy-ivylr421-py3.9\lib\site-packages (from requests&lt;3.0.0,&gt;=2.19.0-&gt;imfpy==0.1.17) (2.0.9)
-</pre></div>
-</div>
 </div>
 </div>
 </section>
-<section id="submodule-1-imfpy-searches">
-<h2>Submodule 1: <code class="docutils literal notranslate"><span class="pre">imfpy.searches</span></code><a class="headerlink" href="#submodule-1-imfpy-searches" title="Permalink to this headline"></a></h2>
-<p>The searches submodule allows the user to search through the available databases which can be accessed through the API. It uses a simple caching mechanism to store search data efficiently. The intention is that I will build further submodules to retrieve data on the basis of user searches. In the meantime, the searches submodule is still useful for assessing what information is available.</p>
+<section id="module-imfpy-searches">
+<h2>Module <code class="docutils literal notranslate"><span class="pre">imfpy.searches</span></code><a class="headerlink" href="#module-imfpy-searches" title="Permalink to this headline"></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">imfpy</span> <span class="kn">import</span> <span class="n">searches</span>
@@ -183,8 +179,10 @@ Requirement already satisfied: charset-normalizer~=2.0.0 in c:\users\liamt\appda
 </div>
 </div>
 </div>
+<p>The searches bmodule allows the user to search through the available databases which can be accessed through the API. It uses a simple caching mechanism to store search data efficiently. The intention is that I will build further modules to retrieve data on the basis of user searches. In the meantime, the searches module is still useful for assessing what information is available.</p>
 <section id="searches-country-codes">
-<h3><code class="docutils literal notranslate"><span class="pre">searches.country_codes()</span></code><a class="headerlink" href="#searches-country-codes" title="Permalink to this headline"></a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">searches.country_codes</span></code><a class="headerlink" href="#searches-country-codes" title="Permalink to this headline"></a></h3>
+<p><em>Usage: <code class="docutils literal notranslate"><span class="pre">searches.country_codes()</span></code></em></p>
 <p>This function returns a dataframe of all IMF databases from which data can be accessed through the JSON API.
 The resulting dataframe is cached to the local environment.</p>
 <div class="cell docutils container">
@@ -281,8 +279,9 @@ The resulting dataframe is cached to the local environment.</p>
 </div></div></div>
 </div>
 </section>
-<section id="searches-country-search-keyword-regex-false">
-<h3><code class="docutils literal notranslate"><span class="pre">searches.country_search(keyword,</span> <span class="pre">regex</span> <span class="pre">=</span> <span class="pre">False)</span></code><a class="headerlink" href="#searches-country-search-keyword-regex-false" title="Permalink to this headline"></a></h3>
+<section id="searches-country-search">
+<h3><code class="docutils literal notranslate"><span class="pre">searches.country_search</span></code><a class="headerlink" href="#searches-country-search" title="Permalink to this headline"></a></h3>
+<p><em>Usage: <code class="docutils literal notranslate"><span class="pre">searches.country_search(keyword,</span> <span class="pre">regex</span> <span class="pre">=</span> <span class="pre">False)</span></code></em></p>
 <p>This function enables the user to search the country codes data for particular countries. The function returns a pandas dataframe of country codes and countries matching the search, which can be done by normal string methods (the default) or a regular expression (if the user wishes to specify). The search operates on cached data or calls <code class="docutils literal notranslate"><span class="pre">country_codes</span></code> if the cache is empty.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -389,7 +388,8 @@ The resulting dataframe is cached to the local environment.</p>
 </div>
 </section>
 <section id="searches-database-codes">
-<h3><code class="docutils literal notranslate"><span class="pre">searches.database_codes()</span></code><a class="headerlink" href="#searches-database-codes" title="Permalink to this headline"></a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">searches.database_codes</span></code><a class="headerlink" href="#searches-database-codes" title="Permalink to this headline"></a></h3>
+<p><em>Usage: <code class="docutils literal notranslate"><span class="pre">searches.database_codes()</span></code></em></p>
 <p>This function is similar to <code class="docutils literal notranslate"><span class="pre">country_codes</span></code> but instead returns a pandas dataframe of all accessible databases and database codes. The result is cached to the local environment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -485,9 +485,10 @@ The resulting dataframe is cached to the local environment.</p>
 </div></div></div>
 </div>
 </section>
-<section id="searches-database-search-keyword-regex-false">
-<h3><code class="docutils literal notranslate"><span class="pre">searches.database_search(keyword,</span> <span class="pre">regex</span> <span class="pre">=</span> <span class="pre">False)</span></code><a class="headerlink" href="#searches-database-search-keyword-regex-false" title="Permalink to this headline"></a></h3>
+<section id="searches-database-search">
+<h3><code class="docutils literal notranslate"><span class="pre">searches.database_search</span></code><a class="headerlink" href="#searches-database-search" title="Permalink to this headline"></a></h3>
 <p>This function enables the user to search the database codes data for particular databases. The function returns a pandas dataframe of database codes and databases matching the search, which can be done by normal string methods (the default) or a regular expression (if the user wishes to specify). The search operates on cached data or calls <code class="docutils literal notranslate"><span class="pre">database_codes</span></code> if the cache is empty.</p>
+<p><em>Usage: <code class="docutils literal notranslate"><span class="pre">searches.database_search(keyword,</span> <span class="pre">regex</span> <span class="pre">=</span> <span class="pre">False)</span></code></em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">searches</span><span class="o">.</span><span class="n">database_search</span><span class="p">(</span><span class="s2">&quot;development&quot;</span><span class="p">)</span>
@@ -607,8 +608,9 @@ The resulting dataframe is cached to the local environment.</p>
 </div></div></div>
 </div>
 </section>
-<section id="searches-database-info-database-id">
-<h3><code class="docutils literal notranslate"><span class="pre">searches.database_info(database_id)</span></code><a class="headerlink" href="#searches-database-info-database-id" title="Permalink to this headline"></a></h3>
+<section id="searches-database-info">
+<h3><code class="docutils literal notranslate"><span class="pre">searches.database_info</span></code><a class="headerlink" href="#searches-database-info" title="Permalink to this headline"></a></h3>
+<p><em>Usage: <code class="docutils literal notranslate"><span class="pre">searches.database_info(database_id)</span></code></em></p>
 <p>This function returns the high-level information on a particular user-specified database. The idea is that the user should first search for a database using database_search(). If the user wishes to obtain more information about that database they can use database_info() on the desired database code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -646,7 +648,7 @@ The resulting dataframe is cached to the local environment.</p>
     <tr>
       <th>0</th>
       <td>Latest Update Date</td>
-      <td>12/16/2021</td>
+      <td>12/17/2021</td>
     </tr>
     <tr>
       <th>1</th>
@@ -688,8 +690,9 @@ The resulting dataframe is cached to the local environment.</p>
 </div></div></div>
 </div>
 </section>
-<section id="searches-database-dimensions-database-id">
-<h3><code class="docutils literal notranslate"><span class="pre">searches.database_dimensions(database_id)</span></code><a class="headerlink" href="#searches-database-dimensions-database-id" title="Permalink to this headline"></a></h3>
+<section id="searches-database-dimensions">
+<h3><code class="docutils literal notranslate"><span class="pre">searches.database_dimensions</span></code><a class="headerlink" href="#searches-database-dimensions" title="Permalink to this headline"></a></h3>
+<p><em>Usage: <code class="docutils literal notranslate"><span class="pre">searches.database_dimensions(database_id)</span></code></em></p>
 <p>This function returns the dimensions of a particular user-specified database. The idea is that the user should first search for a database using database_search(). If the user wants to access data from that database later, it will be useful to know the dimensions of that particular database (i.e. fields that can be used as API queries). In the example below, <code class="docutils literal notranslate"><span class="pre">CL_FREQ</span></code> denotes available data frequencies; while <code class="docutils literal notranslate"><span class="pre">CL_INDICATOR_FSI</span></code> denotes the indicator variables contained in the <em>FSI</em> database.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -752,8 +755,9 @@ The resulting dataframe is cached to the local environment.</p>
 </div></div></div>
 </div>
 </section>
-<section id="searches-indicator-dimensions-indicator-id">
-<h3><code class="docutils literal notranslate"><span class="pre">searches.indicator_dimensions(indicator_id)</span></code><a class="headerlink" href="#searches-indicator-dimensions-indicator-id" title="Permalink to this headline"></a></h3>
+<section id="searches-indicator-dimensions">
+<h3><code class="docutils literal notranslate"><span class="pre">searches.indicator_dimensions</span></code><a class="headerlink" href="#searches-indicator-dimensions" title="Permalink to this headline"></a></h3>
+<p><em>Usage: <code class="docutils literal notranslate"><span class="pre">searches.indicator_dimensions(indicator_id)</span></code></em></p>
 <p>This function returns a dataframe of all indicators and series IDs (i.e. the most granular unit of data apart from individual values) for a given user-specified indicator ID. IMF data is organized hierarchically - the highest (most aggregated) unit is the database; followed by dimensions, followed by indicators, followed by values (the lowest, most disaggregated unit).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -831,10 +835,11 @@ The resulting dataframe is cached to the local environment.</p>
 </div>
 </section>
 </section>
-<section id="submodule-2-imfpy-retrievals">
-<h2>Submodule 2: <code class="docutils literal notranslate"><span class="pre">imfpy.retrievals</span></code><a class="headerlink" href="#submodule-2-imfpy-retrievals" title="Permalink to this headline"></a></h2>
-<p>The retrievals submodule so far only contains one function: <code class="docutils literal notranslate"><span class="pre">dots</span></code> - a highly flexible function to return time series goods trade data between countries from the IMF Direction of Trade (DOTS) Database. Over time the retrievals module will be populated with other functions designed to interact with other key databases. Since I am particularly interested in trade policy, I have focused on trade statistics and designed a lot of functionality around that (and what would be useful to practitioners in the trade policy area).</p>
-<p><code class="docutils literal notranslate"><span class="pre">dots()</span></code> returns a pandas dataframe of time series trade data to fit the user’s exact specifications. The data is clean and ready for econometric analysis/visualization/presentation as the user requires. <code class="docutils literal notranslate"><span class="pre">dots()</span></code> is also robust to bad inputs and will throw errors if the user enters invalid or non-requestable parameters.</p>
+<section id="module-imfpy-retrievals">
+<h2>Module <code class="docutils literal notranslate"><span class="pre">imfpy.retrievals</span></code><a class="headerlink" href="#module-imfpy-retrievals" title="Permalink to this headline"></a></h2>
+<p>The retrievals module so far only contains one function: <code class="docutils literal notranslate"><span class="pre">dots()</span></code> - a highly flexible function to return time series goods trade data between countries from the IMF Direction of Trade (DoTS) Database. Over time the retrievals module will be populated with other functions designed to interact with other key databases. Since I am particularly interested in trade policy, I have focused on trade statistics and designed a lot of functionality around that (and what would be useful to practitioners in the trade policy area).</p>
+<section id="retrievals-dots">
+<h3><code class="docutils literal notranslate"><span class="pre">retrievals.dots</span></code><a class="headerlink" href="#retrievals-dots" title="Permalink to this headline"></a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">imfpy.retrievals</span> <span class="kn">import</span> <span class="n">dots</span>
@@ -842,8 +847,12 @@ The resulting dataframe is cached to the local environment.</p>
 </div>
 </div>
 </div>
-<section id="return-a-dataframe-of-u-s-china-annual-trade-data-from-1995-to-2020">
-<h3><strong>1. Return a dataframe of U.S.-China annual trade data from 1995 to 2020.</strong><a class="headerlink" href="#return-a-dataframe-of-u-s-china-annual-trade-data-from-1995-to-2020" title="Permalink to this headline"></a></h3>
+<p><em>Usage: <code class="docutils literal notranslate"><span class="pre">dots(country,</span> <span class="pre">counterparts,</span> <span class="pre">start,</span> <span class="pre">end,</span> <span class="pre">freq='A',</span> <span class="pre">form='wide')</span></code></em></p>
+<p><code class="docutils literal notranslate"><span class="pre">dots()</span></code> returns a pandas dataframe of time series trade data to fit the user’s exact specifications. The data is clean and ready for econometric analysis/visualization/presentation as the user requires. <code class="docutils literal notranslate"><span class="pre">dots()</span></code> is also robust to bad inputs and will throw errors if the user enters invalid or non-requestable parameters.</p>
+<p><strong>Note, all data returned is in $USD millions, current prices.</strong></p>
+<section id="annual-data-one-counterpart">
+<h4>1. Annual data, one counterpart<a class="headerlink" href="#annual-data-one-counterpart" title="Permalink to this headline"></a></h4>
+<p><strong>Return a dataframe of U.S.-China annual trade data from 1995 to 2020.</strong></p>
 <p>Note: here, wide and long form data are equivalent since there is one country and one counterpart.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -949,12 +958,13 @@ The resulting dataframe is cached to the local environment.</p>
 </div></div></div>
 </div>
 </section>
-<section id="return-a-dataframe-of-mexico-world-monthly-trade-data-from-2010-to-2020">
-<h3><strong>2. Return a dataframe of Mexico-World monthly trade data from 2010 to 2020.</strong><a class="headerlink" href="#return-a-dataframe-of-mexico-world-monthly-trade-data-from-2010-to-2020" title="Permalink to this headline"></a></h3>
+<section id="monthly-data-one-counterpart">
+<h4>2. Monthly data, one counterpart<a class="headerlink" href="#monthly-data-one-counterpart" title="Permalink to this headline"></a></h4>
+<p><strong>Return a dataframe of Mexico-World monthly trade data from 2010 to 2020.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">dots</span><span class="p">(</span><span class="s1">&#39;MX&#39;</span><span class="p">,</span><span class="s1">&#39;W00&#39;</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
-<span class="n">d</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">d</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -996,9 +1006,9 @@ The resulting dataframe is cached to the local environment.</p>
       <td>MX</td>
       <td>W00</td>
       <td>19189.889</td>
-      <td>20812.10784</td>
-      <td>-1622.21884</td>
-      <td>40001.99684</td>
+      <td>20812.108</td>
+      <td>-1622.219</td>
+      <td>40001.997</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1006,9 +1016,9 @@ The resulting dataframe is cached to the local environment.</p>
       <td>MX</td>
       <td>W00</td>
       <td>21302.600</td>
-      <td>22132.58058</td>
-      <td>-829.98058</td>
-      <td>43435.18058</td>
+      <td>22132.581</td>
+      <td>-829.981</td>
+      <td>43435.181</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1016,9 +1026,9 @@ The resulting dataframe is cached to the local environment.</p>
       <td>MX</td>
       <td>W00</td>
       <td>26104.127</td>
-      <td>27253.55082</td>
-      <td>-1149.42382</td>
-      <td>53357.67782</td>
+      <td>27253.551</td>
+      <td>-1149.424</td>
+      <td>53357.678</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1026,9 +1036,9 @@ The resulting dataframe is cached to the local environment.</p>
       <td>MX</td>
       <td>W00</td>
       <td>24844.517</td>
-      <td>26249.84742</td>
-      <td>-1405.33042</td>
-      <td>51094.36442</td>
+      <td>26249.847</td>
+      <td>-1405.330</td>
+      <td>51094.364</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1036,9 +1046,9 @@ The resulting dataframe is cached to the local environment.</p>
       <td>MX</td>
       <td>W00</td>
       <td>24796.461</td>
-      <td>26101.41668</td>
-      <td>-1304.95568</td>
-      <td>50897.87768</td>
+      <td>26101.417</td>
+      <td>-1304.956</td>
+      <td>50897.878</td>
     </tr>
     <tr>
       <th>5</th>
@@ -1046,30 +1056,29 @@ The resulting dataframe is cached to the local environment.</p>
       <td>MX</td>
       <td>W00</td>
       <td>25000.453</td>
-      <td>26857.07796</td>
-      <td>-1856.62496</td>
-      <td>51857.53096</td>
+      <td>26857.078</td>
+      <td>-1856.625</td>
+      <td>51857.531</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
 </section>
-<section id="return-a-wide-form-dataframe-of-greece-u-s-and-greece-germany-annual-trade-data-from-2000-to-2019">
-<h3><strong>3. Return a wide-form dataframe of Greece-U.S. and Greece-Germany annual trade data from 2000 to 2019.</strong><a class="headerlink" href="#return-a-wide-form-dataframe-of-greece-u-s-and-greece-germany-annual-trade-data-from-2000-to-2019" title="Permalink to this headline"></a></h3>
+<section id="annual-data-multiple-counterparts-wide-form">
+<h4>3. Annual data, multiple counterparts, wide form<a class="headerlink" href="#annual-data-multiple-counterparts-wide-form" title="Permalink to this headline"></a></h4>
+<p><strong>Return a wide-form dataframe of Greece-U.S. and Greece-Germany annual trade data from 2000 to 2019.</strong></p>
 <p>Note that the resulting dataframe is organized as a multilevel (hierarchical) pandas dataframe. This may feel unfamiliar to some users but all of the normal functionality of pandas is retained. Note that the wide-form data is indexed by Period, while the long-form data is indexed numerically.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">dots</span><span class="p">(</span><span class="s2">&quot;GR&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;US&quot;</span><span class="p">,</span> <span class="s2">&quot;DE&quot;</span><span class="p">],</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2019</span><span class="p">)</span>
-<span class="n">d</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">d</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="c1">#show first 6 rows only</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
+&lt;Response [200]&gt;
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1203,17 +1212,23 @@ The resulting dataframe is cached to the local environment.</p>
 </div></div></div>
 </div>
 </section>
-<section id="return-a-long-form-dataframe-of-morocco-u-s-morocco-algeria-and-morocco-mozambique-annual-trade-data-from-2002-to-2003">
-<h3><strong>4. Return a long-form dataframe of Morocco-U.S., Morocco-Algeria, and Morocco-Mozambique annual trade data from 2002 to 2003.</strong><a class="headerlink" href="#return-a-long-form-dataframe-of-morocco-u-s-morocco-algeria-and-morocco-mozambique-annual-trade-data-from-2002-to-2003" title="Permalink to this headline"></a></h3>
-<p>Note that the resulting dataframe is organized as a multilevel (hierarchical) pandas dataframe. This may feel unfamiliar to some users but all of the normal functionality of pandas is retained. Note that the wide-form data is indexed by Period, while the long-form data is indexed numerically.</p>
+<section id="annual-data-multiple-counterparts-long-form">
+<h4>4. Annual data, multiple counterparts, long form<a class="headerlink" href="#annual-data-multiple-counterparts-long-form" title="Permalink to this headline"></a></h4>
+<p><strong>Return a long-form dataframe of Morocco-U.S., Morocco-Algeria, and Morocco-Mozambique annual trade data from 2002 to 2003.</strong></p>
+<p>Sometimes, when executing multiple <code class="docutils literal notranslate"><span class="pre">dots()</span></code> requests in sequence, the <code class="docutils literal notranslate"><span class="pre">requests.json()</span></code> JSON decoder module breaks down. To circumvent this issue, simply build in some wait time before executing consecutive requests.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#wait 10 seconds from executing the previous request</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#wait 10 seconds before executing the next request</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="n">d</span> <span class="o">=</span> <span class="n">dots</span><span class="p">(</span><span class="s2">&quot;MA&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;US&quot;</span><span class="p">,</span> <span class="s2">&quot;DZ&quot;</span><span class="p">,</span> <span class="s2">&quot;MZ&quot;</span><span class="p">],</span> <span class="mi">2002</span><span class="p">,</span> <span class="mi">2003</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s2">&quot;long&quot;</span><span class="p">)</span>
-<span class="n">d</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">dots</span><span class="p">(</span><span class="s2">&quot;MA&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;US&quot;</span><span class="p">,</span> <span class="s2">&quot;DZ&quot;</span><span class="p">,</span> <span class="s2">&quot;MZ&quot;</span><span class="p">],</span> <span class="mi">2002</span><span class="p">,</span> <span class="mi">2003</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s2">&quot;long&quot;</span><span class="p">)</span>
+<span class="n">d</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1256,73 +1271,74 @@ The resulting dataframe is cached to the local environment.</p>
       <td>2002</td>
       <td>MA</td>
       <td>US</td>
-      <td>509.474573</td>
-      <td>241.059382</td>
-      <td>-268.415191</td>
-      <td>750.533955</td>
+      <td>509.475</td>
+      <td>241.059</td>
+      <td>-268.415</td>
+      <td>750.534</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2003</td>
       <td>MA</td>
       <td>US</td>
-      <td>577.220047</td>
-      <td>245.524115</td>
-      <td>-331.695932</td>
-      <td>822.744162</td>
+      <td>577.220</td>
+      <td>245.524</td>
+      <td>-331.696</td>
+      <td>822.744</td>
     </tr>
     <tr>
       <th>0</th>
       <td>2002</td>
       <td>MA</td>
       <td>DZ</td>
-      <td>159.586018</td>
-      <td>21.297693</td>
-      <td>-138.288325</td>
-      <td>180.883711</td>
+      <td>159.586</td>
+      <td>21.298</td>
+      <td>-138.288</td>
+      <td>180.884</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2003</td>
       <td>MA</td>
       <td>DZ</td>
-      <td>174.591402</td>
-      <td>23.765498</td>
-      <td>-150.825904</td>
-      <td>198.356900</td>
+      <td>174.591</td>
+      <td>23.765</td>
+      <td>-150.826</td>
+      <td>198.357</td>
     </tr>
     <tr>
       <th>0</th>
       <td>2002</td>
       <td>MA</td>
       <td>MZ</td>
-      <td>0.003444</td>
-      <td>0.050268</td>
-      <td>0.046824</td>
-      <td>0.053712</td>
+      <td>0.003</td>
+      <td>0.050</td>
+      <td>0.047</td>
+      <td>0.054</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2003</td>
       <td>MA</td>
       <td>MZ</td>
-      <td>0.060060</td>
-      <td>0.046896</td>
-      <td>-0.013164</td>
-      <td>0.106956</td>
+      <td>0.060</td>
+      <td>0.047</td>
+      <td>-0.013</td>
+      <td>0.107</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
 </section>
-<section id="return-long-form-monthly-trade-data-from-developing-asia-vs-japan-and-korea-between-july-2000-and-september-2000">
-<h3><strong>5. Return long-form monthly trade data from Developing Asia vs. Japan and Korea between July 2000 and September 2000</strong><a class="headerlink" href="#return-long-form-monthly-trade-data-from-developing-asia-vs-japan-and-korea-between-july-2000-and-september-2000" title="Permalink to this headline"></a></h3>
+<section id="monthly-data-multiple-counterparts-month-start-and-end-date">
+<h4>5. Monthly data, multiple counterparts, month start and end date<a class="headerlink" href="#monthly-data-multiple-counterparts-month-start-and-end-date" title="Permalink to this headline"></a></h4>
+<p><strong>Return long-form monthly trade data from Developing Asia vs. Japan and Korea between July 2000 and September 2000</strong></p>
 <p>As can be seen, <code class="docutils literal notranslate"><span class="pre">dots()</span></code> can handle complex queries requesting data from countries and country groups with precisely defined start and end dates.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">dots</span><span class="p">(</span><span class="s2">&quot;XS25&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;JP&quot;</span><span class="p">,</span> <span class="s2">&quot;KR&quot;</span><span class="p">],</span> <span class="mf">2000.07</span><span class="p">,</span> <span class="mf">2000.09</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s2">&quot;long&quot;</span><span class="p">)</span>
-<span class="n">d</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">d</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1364,60 +1380,185 @@ The resulting dataframe is cached to the local environment.</p>
       <td>2000-07</td>
       <td>XS25</td>
       <td>JP</td>
-      <td>7545.610160</td>
-      <td>8023.239783</td>
-      <td>-477.629623</td>
-      <td>15568.849943</td>
+      <td>7545.61</td>
+      <td>8023.24</td>
+      <td>-477.63</td>
+      <td>15568.85</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2000-08</td>
       <td>XS25</td>
       <td>JP</td>
-      <td>8194.866066</td>
-      <td>8213.817038</td>
-      <td>-18.950972</td>
-      <td>16408.683104</td>
+      <td>8194.87</td>
+      <td>8213.82</td>
+      <td>-18.95</td>
+      <td>16408.68</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2000-09</td>
       <td>XS25</td>
       <td>JP</td>
-      <td>8221.404178</td>
-      <td>8163.778007</td>
-      <td>57.626171</td>
-      <td>16385.182185</td>
+      <td>8221.40</td>
+      <td>8163.78</td>
+      <td>57.63</td>
+      <td>16385.18</td>
     </tr>
     <tr>
       <th>0</th>
       <td>2000-07</td>
       <td>XS25</td>
       <td>KR</td>
-      <td>1885.387174</td>
-      <td>3205.097820</td>
-      <td>-1319.710646</td>
-      <td>5090.484994</td>
+      <td>1885.39</td>
+      <td>3205.10</td>
+      <td>-1319.71</td>
+      <td>5090.48</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2000-08</td>
       <td>XS25</td>
       <td>KR</td>
-      <td>1989.031712</td>
-      <td>3386.065355</td>
-      <td>-1397.033643</td>
-      <td>5375.097067</td>
+      <td>1989.03</td>
+      <td>3386.07</td>
+      <td>-1397.03</td>
+      <td>5375.10</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2000-09</td>
       <td>XS25</td>
       <td>KR</td>
-      <td>1874.230681</td>
-      <td>3420.415206</td>
-      <td>-1546.184525</td>
-      <td>5294.645887</td>
+      <td>1874.23</td>
+      <td>3420.42</td>
+      <td>-1546.18</td>
+      <td>5294.65</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="annual-data-multiple-counterparts-month-start-and-end-date">
+<h4>6. Annual data, multiple counterparts, month start and end date<a class="headerlink" href="#annual-data-multiple-counterparts-month-start-and-end-date" title="Permalink to this headline"></a></h4>
+<p><strong>Return Kuwait-Iran and Kuwait-Turkey annual trade data from May 2000 to April 2002.</strong></p>
+<p>Note that here, start and end date format (monthly) do not match the frequency of data requested (annual). In this case, <code class="docutils literal notranslate"><span class="pre">dots()</span></code> rounds <em>down</em> the start date to the nearest whole year, and rounds <em>up</em> the end date to the nearest whole year.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">dots</span><span class="p">(</span><span class="s2">&quot;KW&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;IR&quot;</span><span class="p">,</span> <span class="s2">&quot;TR&quot;</span><span class="p">],</span> <span class="mf">2000.5</span><span class="p">,</span> <span class="mf">2002.4</span><span class="p">)</span>
+<span class="n">d</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Country</th>
+      <th colspan="2" halign="left">Exports</th>
+      <th colspan="2" halign="left">Imports</th>
+      <th colspan="2" halign="left">Trade Balance</th>
+      <th colspan="2" halign="left">Twoway Trade</th>
+    </tr>
+    <tr>
+      <th>Counterpart</th>
+      <th></th>
+      <th>IR</th>
+      <th>TR</th>
+      <th>IR</th>
+      <th>TR</th>
+      <th>IR</th>
+      <th>TR</th>
+      <th>IR</th>
+      <th>TR</th>
+    </tr>
+    <tr>
+      <th>Period</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000</th>
+      <td>KW</td>
+      <td>8.9</td>
+      <td>24.3</td>
+      <td>115.1</td>
+      <td>115.8</td>
+      <td>-106.2</td>
+      <td>-91.5</td>
+      <td>124.0</td>
+      <td>140.1</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>KW</td>
+      <td>6.5</td>
+      <td>17.9</td>
+      <td>127.2</td>
+      <td>136.2</td>
+      <td>-120.7</td>
+      <td>-118.3</td>
+      <td>133.8</td>
+      <td>154.1</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>KW</td>
+      <td>5.3</td>
+      <td>14.4</td>
+      <td>144.2</td>
+      <td>185.2</td>
+      <td>-139.0</td>
+      <td>-170.8</td>
+      <td>149.5</td>
+      <td>199.7</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>KW</td>
+      <td>6.4</td>
+      <td>17.4</td>
+      <td>189.7</td>
+      <td>223.7</td>
+      <td>-183.3</td>
+      <td>-206.3</td>
+      <td>196.1</td>
+      <td>241.2</td>
     </tr>
   </tbody>
 </table>
@@ -1445,7 +1586,7 @@ All of the following requests will trigger an <code class="docutils literal notr
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_24108</span><span class="o">/</span><span class="mf">3366050960.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_5872</span><span class="o">/</span><span class="mf">3366050960.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dots</span><span class="p">(</span><span class="s2">&quot;CN&quot;</span><span class="p">,</span><span class="s2">&quot;MX&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;wide&quot;</span><span class="p">),</span> <span class="c1">#bad start year</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">dots</span><span class="p">(</span><span class="s2">&quot;CN&quot;</span><span class="p">,</span><span class="s2">&quot;CN&quot;</span><span class="p">,</span> <span class="mi">1980</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;wide&quot;</span><span class="p">),</span> <span class="c1">#country==counterparts</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">dots</span><span class="p">(</span><span class="s2">&quot;CN&quot;</span><span class="p">,[</span><span class="s2">&quot;MX&quot;</span><span class="p">],</span> <span class="mi">1980</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;wide&quot;</span><span class="p">),</span> <span class="c1">#counterparts is a list length 1</span>
@@ -1466,9 +1607,13 @@ All of the following requests will trigger an <code class="docutils literal notr
 </div>
 </section>
 </section>
-<section id="submodule-3-imfpy-tools">
-<h2>Submodule 3: <code class="docutils literal notranslate"><span class="pre">imfpy.tools</span></code><a class="headerlink" href="#submodule-3-imfpy-tools" title="Permalink to this headline"></a></h2>
-<p>Over time my idea is to include more tools in this submodule that help to conduct rudimentary analysis on the returned data. For now, I have a single function <code class="docutils literal notranslate"><span class="pre">dotsplot()</span></code> that takes in a <em>long-form</em> pandas DataFrame (of the type returned by <code class="docutils literal notranslate"><span class="pre">retrievals.dots()</span></code>, or else it will throw an error) and returns plots of variables selected by the user.</p>
+</section>
+<section id="module-3-imfpy-tools">
+<h2>Module 3: <code class="docutils literal notranslate"><span class="pre">imfpy.tools</span></code><a class="headerlink" href="#module-3-imfpy-tools" title="Permalink to this headline"></a></h2>
+<p>Over time my idea is to include more tools in this module that help to conduct rudimentary analysis on the returned data. For now, I have a single function <code class="docutils literal notranslate"><span class="pre">dotsplot()</span></code> that takes in a <em>long-form</em> pandas DataFrame (of the type returned by <code class="docutils literal notranslate"><span class="pre">retrievals.dots()</span></code>, or else it will throw an error) and returns plots of variables selected by the user.</p>
+<section id="tools-dotsplot">
+<h3><code class="docutils literal notranslate"><span class="pre">tools.dotsplot</span></code><a class="headerlink" href="#tools-dotsplot" title="Permalink to this headline"></a></h3>
+<p><em>Usage: <code class="docutils literal notranslate"><span class="pre">dotsplot(dots_dataframe,</span> <span class="pre">subset=['Exports',</span> <span class="pre">'Imports',</span> <span class="pre">'Trade</span> <span class="pre">Balance'])</span></code></em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">imfpy.tools</span> <span class="kn">import</span> <span class="n">dotsplot</span>
@@ -1476,12 +1621,11 @@ All of the following requests will trigger an <code class="docutils literal notr
 </div>
 </div>
 </div>
-<section id="dotsplot-dots-dataframe-subset-exports-imports-trade-balance">
-<h3><code class="docutils literal notranslate"><span class="pre">dotsplot(dots_dataframe,</span> <span class="pre">subset=['Exports',</span> <span class="pre">'Imports',</span> <span class="pre">'Trade</span> <span class="pre">Balance'])</span></code><a class="headerlink" href="#dotsplot-dots-dataframe-subset-exports-imports-trade-balance" title="Permalink to this headline"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">dotsplot()</span></code> takes an arbitrary dots_dataframe (pandas DataFrame returned by <code class="docutils literal notranslate"><span class="pre">retrievals.dots()</span></code>) in long-form, and plots time series charts of variables selected by the user. These variables are entered as a list in the optional argument <code class="docutils literal notranslate"><span class="pre">subset</span></code>. Options are <em>‘Exports’</em>, <em>‘Imports’</em>, <em>‘Trade Balance’</em> and <em>‘Twoway Trade’</em> - all the variables contained in the DOTS database. The default option is <code class="docutils literal notranslate"><span class="pre">['Exports',</span> <span class="pre">'Imports',</span> <span class="pre">'Trade</span> <span class="pre">Balance']</span></code>.</p>
 <p>This function can handle the results of multi-counterpart, complex dots queries and graph them easily. It is also robust to invalid inputs and will warn the user if they try to supply incorrect/badly formatted data or invalid subset parameters.</p>
-<section id="plot-annnual-time-series-data-of-us-china-trade-from-1995-to-2020-for-the-default-variables-exports-imports-and-trade-balance">
-<h4><strong>1. Plot annnual time series data of US-China trade from 1995 to 2020 for the default variables Exports, Imports and Trade Balance</strong><a class="headerlink" href="#plot-annnual-time-series-data-of-us-china-trade-from-1995-to-2020-for-the-default-variables-exports-imports-and-trade-balance" title="Permalink to this headline"></a></h4>
+<section id="plot-annual-time-series-for-one-counterpart">
+<h4>1. Plot annual time series for one counterpart<a class="headerlink" href="#plot-annual-time-series-for-one-counterpart" title="Permalink to this headline"></a></h4>
+<p><strong>Plot annnual time series data of US-China trade from 1995 to 2020 for the default variables Exports, Imports and Trade Balance</strong></p>
 <p>Note, we do not need to specifiy <code class="docutils literal notranslate"><span class="pre">form=&quot;long&quot;</span></code> in the original <code class="docutils literal notranslate"><span class="pre">dots()</span></code> query for <code class="docutils literal notranslate"><span class="pre">dotsplot()</span></code> to work, since long and wide form data are equivalent for this query.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1494,16 +1638,17 @@ All of the following requests will trigger an <code class="docutils literal notr
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
 </pre></div>
 </div>
-<img alt="_images/example_44_1.png" src="_images/example_44_1.png" />
-<img alt="_images/example_44_2.png" src="_images/example_44_2.png" />
+<img alt="_images/example_74_1.png" src="_images/example_74_1.png" />
+<img alt="_images/example_74_2.png" src="_images/example_74_2.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NoneType
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="plot-annnual-time-series-data-of-australia-us-and-australia-china-trade-from-2000-to-2020-on-the-variables-trade-balance-and-two-way-trade">
-<h4><strong>2. Plot annnual time series data of Australia-US and Australia-China trade from 2000 to 2020 on the variables <em>Trade Balance</em> and <em>Two-way Trade</em></strong><a class="headerlink" href="#plot-annnual-time-series-data-of-australia-us-and-australia-china-trade-from-2000-to-2020-on-the-variables-trade-balance-and-two-way-trade" title="Permalink to this headline"></a></h4>
+<section id="plot-annual-time-series-selected-by-user-for-one-counterpart">
+<h4>2. Plot annual time series, selected by user, for one counterpart<a class="headerlink" href="#plot-annual-time-series-selected-by-user-for-one-counterpart" title="Permalink to this headline"></a></h4>
+<p><strong>Plot annnual time series data of Australia-US and Australia-China trade from 2000 to 2020 on the variables <em>Trade Balance</em> and <em>Two-way Trade</em></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">dots</span><span class="p">(</span><span class="s1">&#39;AU&#39;</span><span class="p">,[</span><span class="s1">&#39;US&#39;</span><span class="p">,</span><span class="s1">&#39;CN&#39;</span><span class="p">],</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s2">&quot;long&quot;</span><span class="p">)</span>
@@ -1516,14 +1661,15 @@ All of the following requests will trigger an <code class="docutils literal notr
 &lt;Response [200]&gt;
 </pre></div>
 </div>
-<img alt="_images/example_46_1.png" src="_images/example_46_1.png" />
-<img alt="_images/example_46_2.png" src="_images/example_46_2.png" />
+<img alt="_images/example_77_1.png" src="_images/example_77_1.png" />
+<img alt="_images/example_77_2.png" src="_images/example_77_2.png" />
 </div>
 </div>
 </section>
-<section id="plot-monthly-time-series-data-of-denmark-us-and-denmark-new-zealand-denmark-germany-and-denmark-italy-trade-from-2000-to-2020-on-the-default-variables">
-<h4><strong>2. Plot monthly time series data of Denmark-US and Denmark-New Zealand, Denmark-Germany and Denmark-Italy trade from 2000 to 2020 on the default variables</strong><a class="headerlink" href="#plot-monthly-time-series-data-of-denmark-us-and-denmark-new-zealand-denmark-germany-and-denmark-italy-trade-from-2000-to-2020-on-the-default-variables" title="Permalink to this headline"></a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">dots()</span></code> and <code class="docutils literal notranslate"><span class="pre">dotsplots()</span></code> methods can be chained together naturally.</p>
+<section id="plot-monthly-time-series-for-multiple-countries-in-a-single-command">
+<h4>3. Plot monthly time series for multiple countries in a single command<a class="headerlink" href="#plot-monthly-time-series-for-multiple-countries-in-a-single-command" title="Permalink to this headline"></a></h4>
+<p><strong>Plot monthly time series data of Denmark-US and Denmark-New Zealand, Denmark-Germany and Denmark-Italy trade from 1998 to 2018 on the default variables.</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">dots()</span></code> and <code class="docutils literal notranslate"><span class="pre">dotsplots()</span></code> methods can be chainedtogether in a single line.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dotsplot</span><span class="p">(</span><span class="n">dots</span><span class="p">(</span><span class="s2">&quot;DK&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;US&quot;</span><span class="p">,</span> <span class="s2">&quot;NZ&quot;</span><span class="p">,</span> <span class="s2">&quot;DE&quot;</span><span class="p">,</span> <span class="s2">&quot;IT&quot;</span><span class="p">],</span> <span class="mi">1998</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;long&quot;</span><span class="p">))</span>
@@ -1537,10 +1683,10 @@ All of the following requests will trigger an <code class="docutils literal notr
 &lt;Response [200]&gt;
 </pre></div>
 </div>
-<img alt="_images/example_48_1.png" src="_images/example_48_1.png" />
-<img alt="_images/example_48_2.png" src="_images/example_48_2.png" />
-<img alt="_images/example_48_3.png" src="_images/example_48_3.png" />
-<img alt="_images/example_48_4.png" src="_images/example_48_4.png" />
+<img alt="_images/example_80_1.png" src="_images/example_80_1.png" />
+<img alt="_images/example_80_2.png" src="_images/example_80_2.png" />
+<img alt="_images/example_80_3.png" src="_images/example_80_3.png" />
+<img alt="_images/example_80_4.png" src="_images/example_80_4.png" />
 </div>
 </div>
 </section>

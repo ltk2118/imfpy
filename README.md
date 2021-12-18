@@ -6,54 +6,76 @@ This API client is intended to be useful for economic policymakers, researchers,
 
 ## Installation
 
-```bash
-$ pip install imfpy
+```python
+!pip install imfpy
 ```
+
+Depends on:
+
+- python 3.7 and above
+- pandas 1.1.3 and above
+- requests 2.19.0 and above
+- matplotlib 3.2.2. and above
 
 ## Usage
 
-The package contains three modules:  `searches`, `retrievals`, `tools`.
+The package contains three modules:  
+
+* [`searches`](https://imfpy.readthedocs.io/en/latest/autoapi/imfpy/searches/index.html)
+* [`retrievals`](https://imfpy.readthedocs.io/en/latest/autoapi/imfpy/retrievals/index.html)
+* [`tools`](https://imfpy.readthedocs.io/en/latest/autoapi/imfpy/tools/index.html)
 
 `searches` contains many helper functions that assist the user in searching through available IMF databases, dimensions, metadata and variables. 
 
-`retrievals` contains functions that retrieve data from important databases. For now, `retrievals` contains only `retrievals.dots()`, a function that pulls data from the DoTS database including imports, exports, two-way trade and trade balances for IMF countries and country-groups. The function handles flexible queries and formats the returned data to the user's specifications. 
+`retrievals` contains functions that retrieve data from important databases. 
+
+For example, `retrievals.dots` pulls data from the DoTS database including imports, exports, two-way trade and trade balances for IMF countries and country-groups. The function handles flexible queries and formats the returned data to the user's specifications. 
 
 ```python
+#Example: retrieve Greece annual trade data
 >>> from imfpy.retrievals import dots
 >>> dots("GR", ["US", "AU", "DE"], 2000, 2005)
 ```
 
-![usage3](https://github.com/ltk2118/imfpy/blob/main/img/usage4.png)
-
 `tools` contains functions that conduct rudimentary analysis and visualization on the data returned by `retrievals` functions. For example, the `dotsplot` function transforms the result of `dots()` into time series plots.
 
 ```python
+#Example: plot Australia trade data
 >>> from imfpy.tools import dotsplot
 >>> d = dots('AU',['US','CN'], 2000, 2020, freq='A', form="long")
 >>> dotsplot(d, subset=['Trade Balance', 'Twoway Trade'])
 ```
 
-<img src="https://github.com/ltk2118/imfpy/blob/main/img/usage.png" alt="usage" style="zoom:50%;" />
 
-<img src="https://github.com/ltk2118/imfpy/blob/main/img/usage2.png" alt="usage2" style="zoom:50%;" />
 
 ## Links
 
-[Full documentation](https://imfpy.readthedocs.io/en/latest/)
+**Documentation**
 
-[Vignettes](https://github.com/ltk2118/imfpy/blob/main/vignettes/imfpy_vignette.ipynb) 
+* [User Guide/Vignette](https://imfpy.readthedocs.io/en/latest/example.html#user-guide)
 
-[User Guide](https://imfpy.readthedocs.io/en/latest/example.html#user-guide)
+* [Full documentation](https://imfpy.readthedocs.io/en/latest/)
 
-PyPI package
+* [API Reference](https://imfpy.readthedocs.io/en/latest/autoapi/index.html)
 
-[IMF DOTS](https://data.imf.org/?sk=9D6028D4-F14A-464C-A2F2-59B2CD424B85)
+**Distribution**
 
-[Tests](https://github.com/ltk2118/imfpy/blob/main/tests/test_imfpy.py)
+* [Github Repo](https://github.com/ltk2118/imfpy)
+
+* PyPI package
+
+**Tests**
+
+* [Pytests](https://github.com/ltk2118/imfpy/blob/main/tests/test_imfpy.py)
+
+**Extras**
+
+* [IMF DoTS](https://data.imf.org/?sk=9D6028D4-F14A-464C-A2F2-59B2CD424B85)
+* [My website](https://ltk2118.github.io/home/)
 
 ## Contributing
 
-Interested in contributing?  Please get in touch! Check out the contributing guidelines. 
+Interested in contributing? Want to use this package?  Please get in touch! Check out the contributing guidelines. 
 
 Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.
 
